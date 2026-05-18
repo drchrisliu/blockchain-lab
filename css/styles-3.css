@@ -1,0 +1,114 @@
+/* ==========================================
+   SCaaS – Research Synopsis – Page 3 styles
+   ========================================== */
+
+/* page container: ensures content starts below fixed header+menu */
+.page-3 {
+  margin-top: 165px;              /* matches header (110) + menu (approx 50) */
+  padding: 0 7px 30px 7px;        /* 7px left/right padding requirement */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #222;
+  line-height: 1.55;
+  background-color: #fff;
+}
+
+/* Page title - centered and large */
+.page-title-3 {
+  text-align: center;
+  font-size: 2.0rem;
+  font-weight: 700;
+  color: teal;
+  margin: 16px 0 22px 0;
+}
+
+/* Major heading: left-justified, large teal font (smaller than page title) */
+.major-heading-3 {
+  font-size: 1.35rem;
+  color: #007b7b;
+  font-weight: 600;
+  margin: 22px 0 10px 0;
+  text-align: left;
+}
+
+/* Minor heading: slightly larger than normal text, teal */
+.minor-heading-3 {
+  font-size: 1.12rem;
+  color: #007b7b;
+  font-weight: 500;
+  margin: 14px 0 8px 0;
+  text-align: left;
+}
+
+/* Paragraph text styling */
+.ptext-3 {
+  font-size: 1rem;
+  margin: 0 0 14px 0;
+  text-align: justify;
+}
+
+/* Outer bullet lists */
+.list-3 {
+  list-style-type: disc;
+  margin: 0 0 14px 26px; /* ensures 7px page padding plus list indent */
+  padding-left: 0;
+}
+
+/* Inner nested lists */
+.inner-list-3 {
+  list-style-type: circle;
+  margin: 6px 0 8px 28px;
+  padding-left: 0;
+}
+
+/* Slightly different inner list style for deep nesting (if used) */
+.inner-inner-3 {
+  list-style-type: square;
+  margin-left: 30px;
+}
+
+/* make certain emphasized phrases stand out */
+strong {
+  font-weight: 700;
+}
+
+/* subtle dividing line between sections (visible but subtle) */
+.divider-3 {
+  border: none;
+  border-top: 1px solid #dcdcdc;
+  margin: 18px 0;
+}
+
+/* small spacer utility */
+.spacer-3 {
+  height: 18px;
+}
+
+/* Links */
+.page-3 a {
+  color: #006a6a;
+  text-decoration: underline;
+}
+
+/* Responsive rules */
+@media (max-width: 800px) {
+  .page-3 {
+    margin-top: 180px; /* give extra room when header/menu may be taller on mobile */
+    padding: 0 10px 20px 10px;
+  }
+  .page-title-3 {
+    font-size: 1.6rem;
+  }
+  .major-heading-3 {
+    font-size: 1.18rem;
+  }
+  .minor-heading-3 {
+    font-size: 1.05rem;
+  }
+  .list-3 {
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,70 @@
+/* -------- PUBS-RESEARCH PAGE STYLES (styles-4.css) -------- */
+
+.page-4 {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 160px; /* header (110) + menu (≈50) */
+  padding: 0 7px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.page-title-4 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1.5em;
+  font-weight: bold;
+  color: teal;
+}
+
+.divider-4 {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 2em 0;
+}
+
+.major-heading-4 {
+  text-align: center;
+  color: teal;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.minor-heading-4 {
+  color: teal;
+  font-size: 1.2em;
+  margin-top: 1.5em;
+}
+
+.intro-4 {
+  text-align: justify;
+}
+
+.pub-list-4 {
+  list-style-type: disc;
+  padding-left: 2em;
+}
+
+.pub-list-4 li {
+  margin-bottom: 1.5em;
+}
+
+.pub-list-horizontal-4 {
+  list-style-type: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-left: 2em;
+}
+
+.pub-list-horizontal-4 li p {
+  margin: 0.5em 0;
+}
+
+/* Bold/italic emphasis consistency */
+strong em,
+em strong {
+  font-weight: bold;
+  font-style: italic;
+}

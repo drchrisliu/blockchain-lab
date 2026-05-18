@@ -1,0 +1,1108 @@
+============================================================
+STATE TRANSITION #1
+------------------------------------------------------------
+new_state          : INIT
+next_new_state     : ["RcveAgr"]
+associatedDocument : Agreement Document
+timestamp          : 2026-04-20T18:52:39.574Z
+ipfsHash           : bafybei_agreementout_1776711159574
+
+input:
+N/A
+
+output:
+{
+  "fileName": "agreement.pdf",
+  "documentType": "Agreement",
+  "createdByState": [
+    "RcveAgr"
+  ],
+  "productId": "P381141238",
+  "timestamp": "2026-04-20T18:52:39.574Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #2
+------------------------------------------------------------
+new_state          : RcveAgr
+next_new_state     : ["Gateway_0hurmdf"]
+associatedDocument : Agreement Document
+timestamp          : 2026-04-20T18:52:46.698Z
+ipfsHash           : bafybei_agreementin_1776711166698
+
+input:
+{
+  "fileName": "agreement.pdf",
+  "documentType": "Agreement",
+  "createdByState": "RcveAgr",
+  "productId": "P381141238",
+  "timestamp": "2026-04-20T18:52:46.698Z"
+}
+
+output:
+N/A
+============================================================
+
+============================================================
+STATE TRANSITION #3
+------------------------------------------------------------
+new_state          : Gateway_0hurmdf
+next_new_state     : ["GetIns", "GetTransp"]
+associatedDocument : N/A
+timestamp          : 2026-04-20T18:54:03.673Z
+ipfsHash           : N/A
+
+input:
+N/A
+
+output:
+N/A
+============================================================
+
+============================================================
+STATE TRANSITION #4
+------------------------------------------------------------
+new_state          : GetIns
+next_new_state     : ["ComplianceCheck", "GetTransp", "GetTransp"]
+associatedDocument : Insurance Quote Document
+timestamp          : 2026-04-20T18:54:14.125Z
+ipfsHash           : bafybei_fallback_1776711254125
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GetIns",
+  "fromState": null,
+  "event": "GetIns",
+  "serviceType": "insurance",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:11.942Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GetIns",
+  "productId": "P381141238",
+  "serviceType": "insurance",
+  "provider": "ABC Insurance Ltd.",
+  "quotedPrice": 98,
+  "amount": null,
+  "paymentRef": null,
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711254125",
+  "quoteNo": "INS-00001",
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "ComplianceCheck",
+    "GetTransp",
+    "GetTransp"
+  ],
+  "timestamp": "2026-04-20T18:54:14.125Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GetIns",
+  "fromState": null,
+  "event": "GetIns",
+  "serviceType": "insurance",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:11.942Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "requestQuoteDocument",
+  "serviceType": "insurance",
+  "input": {
+    "task": "GetIns",
+    "productId": "P381141238",
+    "maximumPrice": 100,
+    "requester": "SME",
+    "currency": "CAD"
+  },
+  "timestamp": "2026-04-20T18:54:11.942Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "insurance",
+  "txHash": "0xmockins00001",
+  "status": true,
+  "provider": "ABC Insurance Ltd.",
+  "quotedPrice": 98,
+  "paymentRef": null,
+  "amount": null,
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "quoteNo": "INS-00001",
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776711254125",
+  "documentName": "GetIns_P381141238.json",
+  "timestamp": "2026-04-20T18:54:14.125Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GetIns",
+  "productId": "P381141238",
+  "serviceType": "insurance",
+  "provider": "ABC Insurance Ltd.",
+  "quotedPrice": 98,
+  "amount": null,
+  "paymentRef": null,
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711254125",
+  "quoteNo": "INS-00001",
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "ComplianceCheck",
+    "GetTransp",
+    "GetTransp"
+  ],
+  "timestamp": "2026-04-20T18:54:14.125Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #5
+------------------------------------------------------------
+new_state          : ComplianceCheck
+next_new_state     : ["GPins", "GPtransp", "GPtransp"]
+associatedDocument : Insurance ComplianceCheck Proof
+timestamp          : 2026-04-20T18:54:52.370Z
+ipfsHash           : bafybei_fallback_1776711292370
+
+input:
+{
+  "requestType": "task_request",
+  "task": "ComplianceCheck",
+  "fromState": null,
+  "event": "ComplianceCheck",
+  "serviceType": "insurance_compliance",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:50.227Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "ComplianceCheck",
+  "productId": "P381141238",
+  "serviceType": "insurance_compliance",
+  "provider": "ComplianceCheck@0xA3f1...9C2B",
+  "quotedPrice": null,
+  "amount": null,
+  "paymentRef": null,
+  "complianceProofId": "CMP-PROOF-1776711290227",
+  "outcome": "pass",
+  "serviceIdentifier": "0xA3f1...9C2B:insurance_compliance",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711292370",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "GPins",
+    "GPtransp",
+    "GPtransp"
+  ],
+  "timestamp": "2026-04-20T18:54:52.370Z"
+}
+
+[COMPLIANCE FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "ComplianceCheck",
+  "fromState": null,
+  "event": "ComplianceCheck",
+  "serviceType": "insurance_compliance",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:50.227Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "ComplianceCheck",
+  "serviceType": "insurance_compliance",
+  "input": {
+    "task": "ComplianceCheck",
+    "productId": "P381141238",
+    "requester": "SME",
+    "amount": 98,
+    "currency": "CAD",
+    "invocationType": "On-chain direct",
+    "complianceServiceAddress": "0xA3f1...9C2B",
+    "ruleSetId": "insurance_compliance_rules_v1"
+  },
+  "timestamp": "2026-04-20T18:54:50.227Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "insurance_compliance",
+  "txHash": "0xcmp1776711290227",
+  "status": true,
+  "provider": "ComplianceCheck@0xA3f1...9C2B",
+  "quotedPrice": null,
+  "paymentRef": null,
+  "amount": null,
+  "complianceProofId": "CMP-PROOF-1776711290227",
+  "outcome": "pass",
+  "serviceIdentifier": "0xA3f1...9C2B:insurance_compliance",
+  "currency": "CAD",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776711292370",
+  "documentName": "InsComplianceCheck_P381141238_compliance.json",
+  "timestamp": "2026-04-20T18:54:52.370Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "ComplianceCheck",
+  "productId": "P381141238",
+  "serviceType": "insurance_compliance",
+  "provider": "ComplianceCheck@0xA3f1...9C2B",
+  "quotedPrice": null,
+  "amount": null,
+  "paymentRef": null,
+  "complianceProofId": "CMP-PROOF-1776711290227",
+  "outcome": "pass",
+  "serviceIdentifier": "0xA3f1...9C2B:insurance_compliance",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711292370",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "GPins",
+    "GPtransp",
+    "GPtransp"
+  ],
+  "timestamp": "2026-04-20T18:54:52.370Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #6
+------------------------------------------------------------
+new_state          : GetTransp
+next_new_state     : ["GPins", "ComplianceCheck", "ComplianceCheck"]
+associatedDocument : Transportation Quote Document
+timestamp          : 2026-04-20T18:54:18.142Z
+ipfsHash           : bafybei_fallback_1776711258142
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GetTransp",
+  "fromState": null,
+  "event": "GetTransp",
+  "serviceType": "transport",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:15.976Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GetTransp",
+  "productId": "P381141238",
+  "serviceType": "transport",
+  "provider": "FastTransport Inc.",
+  "quotedPrice": 98,
+  "amount": null,
+  "paymentRef": null,
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711258142",
+  "quoteNo": "TRN-00001",
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "GPins",
+    "ComplianceCheck",
+    "ComplianceCheck"
+  ],
+  "timestamp": "2026-04-20T18:54:18.142Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GetTransp",
+  "fromState": null,
+  "event": "GetTransp",
+  "serviceType": "transport",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:15.976Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "requestQuoteDocument",
+  "serviceType": "transport",
+  "input": {
+    "task": "GetTransp",
+    "productId": "P381141238",
+    "maximumPrice": 100,
+    "requester": "SME",
+    "currency": "CAD"
+  },
+  "timestamp": "2026-04-20T18:54:15.976Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "transport",
+  "txHash": "0xmocktrn00001",
+  "status": true,
+  "provider": "FastTransport Inc.",
+  "quotedPrice": 98,
+  "paymentRef": null,
+  "amount": null,
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "quoteNo": "TRN-00001",
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776711258142",
+  "documentName": "GetTransp_P381141238.json",
+  "timestamp": "2026-04-20T18:54:18.142Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GetTransp",
+  "productId": "P381141238",
+  "serviceType": "transport",
+  "provider": "FastTransport Inc.",
+  "quotedPrice": 98,
+  "amount": null,
+  "paymentRef": null,
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711258142",
+  "quoteNo": "TRN-00001",
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "GPins",
+    "ComplianceCheck",
+    "ComplianceCheck"
+  ],
+  "timestamp": "2026-04-20T18:54:18.142Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #7
+------------------------------------------------------------
+new_state          : GPins
+next_new_state     : ["ComplianceCheck", "ComplianceCheck", "ComplianceCheck"]
+associatedDocument : Insurance Payment Instruction
+timestamp          : 2026-04-20T18:54:22.059Z
+ipfsHash           : bafybei_fallback_1776711262059
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GPins",
+  "fromState": null,
+  "event": "GPins",
+  "serviceType": "insurance",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:19.906Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GPins",
+  "productId": "P381141238",
+  "serviceType": "insurance",
+  "provider": "USDXCrypto-StCn",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "PAY-INS-00001",
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711262059",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "ComplianceCheck",
+    "ComplianceCheck",
+    "ComplianceCheck"
+  ],
+  "timestamp": "2026-04-20T18:54:22.059Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GPins",
+  "fromState": null,
+  "event": "GPins",
+  "serviceType": "insurance",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:19.906Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "processPayment",
+  "serviceType": "insurance_payment",
+  "input": {
+    "task": "GPins",
+    "description": "Pay insurance premium (payable)",
+    "invocationType": "Cross-chain",
+    "endpoint": "0xB7d2...4E1A @ USDXCrypto-StCn (ChainID 4200)",
+    "amount": 98,
+    "currency": "CAD",
+    "productId": "P381141238"
+  },
+  "timestamp": "2026-04-20T18:54:19.906Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "insurance",
+  "txHash": "0xpayins00001",
+  "status": true,
+  "provider": "USDXCrypto-StCn",
+  "quotedPrice": null,
+  "paymentRef": "PAY-INS-00001",
+  "amount": 98,
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776711262059",
+  "documentName": "GPins_P381141238_payment.json",
+  "timestamp": "2026-04-20T18:54:22.059Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GPins",
+  "productId": "P381141238",
+  "serviceType": "insurance",
+  "provider": "USDXCrypto-StCn",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "PAY-INS-00001",
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711262059",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "ComplianceCheck",
+    "ComplianceCheck",
+    "ComplianceCheck"
+  ],
+  "timestamp": "2026-04-20T18:54:22.059Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #8
+------------------------------------------------------------
+new_state          : ComplianceCheck
+next_new_state     : ["GPtransp", "ComplianceCheck", "ComplianceCheck"]
+associatedDocument : Transport ComplianceCheck Proof
+timestamp          : 2026-04-20T18:54:48.457Z
+ipfsHash           : bafybei_fallback_1776711288457
+
+input:
+{
+  "requestType": "task_request",
+  "task": "ComplianceCheck",
+  "fromState": null,
+  "event": "ComplianceCheck",
+  "serviceType": "transport_compliance",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:46.302Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "ComplianceCheck",
+  "productId": "P381141238",
+  "serviceType": "transport_compliance",
+  "provider": "ComplianceCheck@0xA3f1...9C2B",
+  "quotedPrice": null,
+  "amount": null,
+  "paymentRef": null,
+  "complianceProofId": "CMP-PROOF-1776711286302",
+  "outcome": "pass",
+  "serviceIdentifier": "0xA3f1...9C2B:transport_compliance",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711288457",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "GPtransp",
+    "ComplianceCheck",
+    "ComplianceCheck"
+  ],
+  "timestamp": "2026-04-20T18:54:48.457Z"
+}
+
+[COMPLIANCE FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "ComplianceCheck",
+  "fromState": null,
+  "event": "ComplianceCheck",
+  "serviceType": "transport_compliance",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:46.302Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "ComplianceCheck",
+  "serviceType": "transport_compliance",
+  "input": {
+    "task": "ComplianceCheck",
+    "productId": "P381141238",
+    "requester": "SME",
+    "amount": 98,
+    "currency": "CAD",
+    "invocationType": "On-chain direct",
+    "complianceServiceAddress": "0xA3f1...9C2B",
+    "ruleSetId": "transport_compliance_rules_v1"
+  },
+  "timestamp": "2026-04-20T18:54:46.302Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "transport_compliance",
+  "txHash": "0xcmp1776711286302",
+  "status": true,
+  "provider": "ComplianceCheck@0xA3f1...9C2B",
+  "quotedPrice": null,
+  "paymentRef": null,
+  "amount": null,
+  "complianceProofId": "CMP-PROOF-1776711286302",
+  "outcome": "pass",
+  "serviceIdentifier": "0xA3f1...9C2B:transport_compliance",
+  "currency": "CAD",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776711288457",
+  "documentName": "TranspComplianceCheck_P381141238_compliance.json",
+  "timestamp": "2026-04-20T18:54:48.457Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "ComplianceCheck",
+  "productId": "P381141238",
+  "serviceType": "transport_compliance",
+  "provider": "ComplianceCheck@0xA3f1...9C2B",
+  "quotedPrice": null,
+  "amount": null,
+  "paymentRef": null,
+  "complianceProofId": "CMP-PROOF-1776711286302",
+  "outcome": "pass",
+  "serviceIdentifier": "0xA3f1...9C2B:transport_compliance",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711288457",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "GPtransp",
+    "ComplianceCheck",
+    "ComplianceCheck"
+  ],
+  "timestamp": "2026-04-20T18:54:48.457Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #9
+------------------------------------------------------------
+new_state          : GPtransp
+next_new_state     : ["DoTransp", "GPins", "GPins"]
+associatedDocument : Transport Payment Instruction
+timestamp          : 2026-04-20T18:54:56.628Z
+ipfsHash           : bafybei_fallback_1776711296628
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GPtransp",
+  "fromState": null,
+  "event": "GPtransp",
+  "serviceType": "transport",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:54.474Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GPtransp",
+  "productId": "P381141238",
+  "serviceType": "transport",
+  "provider": "bankpay-api.example.com",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "PAY-TRN-00001",
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711296628",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "DoTransp",
+    "GPins",
+    "GPins"
+  ],
+  "timestamp": "2026-04-20T18:54:56.628Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GPtransp",
+  "fromState": null,
+  "event": "GPtransp",
+  "serviceType": "transport",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:54:54.474Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "processPayment",
+  "serviceType": "transport_payment",
+  "input": {
+    "task": "GPtransp",
+    "description": "Pay transport provider (payable)",
+    "invocationType": "Cross-chain",
+    "endpoint": "https://bankpay-api.example.com/v1/transfer",
+    "amount": 98,
+    "currency": "CAD",
+    "productId": "P381141238"
+  },
+  "timestamp": "2026-04-20T18:54:54.474Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "transport",
+  "txHash": "0xpaytrn00001",
+  "status": true,
+  "provider": "bankpay-api.example.com",
+  "quotedPrice": null,
+  "paymentRef": "PAY-TRN-00001",
+  "amount": 98,
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776711296628",
+  "documentName": "GPtransp_P381141238_payment.json",
+  "timestamp": "2026-04-20T18:54:56.628Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GPtransp",
+  "productId": "P381141238",
+  "serviceType": "transport",
+  "provider": "bankpay-api.example.com",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "PAY-TRN-00001",
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711296628",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "DoTransp",
+    "GPins",
+    "GPins"
+  ],
+  "timestamp": "2026-04-20T18:54:56.628Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #10
+------------------------------------------------------------
+new_state          : DoTransp
+next_new_state     : ["ComplianceCheck", "GPins", "GPins"]
+associatedDocument : N/A
+timestamp          : 2026-04-20T18:55:02.930Z
+ipfsHash           : N/A
+
+input:
+N/A
+
+output:
+N/A
+============================================================
+
+============================================================
+STATE TRANSITION #11
+------------------------------------------------------------
+new_state          : ComplianceCheck
+next_new_state     : ["GPrcvePmnt", "GPins", "GPins"]
+associatedDocument : Shipping ComplianceCheck Proof
+timestamp          : 2026-04-20T18:55:13.675Z
+ipfsHash           : bafybei_fallback_1776711313675
+
+input:
+{
+  "requestType": "task_request",
+  "task": "ComplianceCheck",
+  "fromState": null,
+  "event": "ComplianceCheck",
+  "serviceType": "shipping_compliance",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:55:11.518Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "ComplianceCheck",
+  "productId": "P381141238",
+  "serviceType": "shipping_compliance",
+  "provider": "ComplianceCheck@0xA3f1...9C2B",
+  "quotedPrice": null,
+  "amount": null,
+  "paymentRef": null,
+  "complianceProofId": "CMP-PROOF-1776711311518",
+  "outcome": "pass",
+  "serviceIdentifier": "0xA3f1...9C2B:shipping_compliance",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711313675",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "GPrcvePmnt",
+    "GPins",
+    "GPins"
+  ],
+  "timestamp": "2026-04-20T18:55:13.675Z"
+}
+
+[COMPLIANCE FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "ComplianceCheck",
+  "fromState": null,
+  "event": "ComplianceCheck",
+  "serviceType": "shipping_compliance",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:55:11.518Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "ComplianceCheck",
+  "serviceType": "shipping_compliance",
+  "input": {
+    "task": "ComplianceCheck",
+    "productId": "P381141238",
+    "requester": "SME",
+    "amount": 98,
+    "currency": "CAD",
+    "invocationType": "On-chain direct",
+    "complianceServiceAddress": "0xA3f1...9C2B",
+    "ruleSetId": "shipping_compliance_rules_v1"
+  },
+  "timestamp": "2026-04-20T18:55:11.518Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "shipping_compliance",
+  "txHash": "0xcmp1776711311518",
+  "status": true,
+  "provider": "ComplianceCheck@0xA3f1...9C2B",
+  "quotedPrice": null,
+  "paymentRef": null,
+  "amount": null,
+  "complianceProofId": "CMP-PROOF-1776711311518",
+  "outcome": "pass",
+  "serviceIdentifier": "0xA3f1...9C2B:shipping_compliance",
+  "currency": "CAD",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776711313675",
+  "documentName": "ShippingComplianceCheck_P381141238_compliance.json",
+  "timestamp": "2026-04-20T18:55:13.675Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "ComplianceCheck",
+  "productId": "P381141238",
+  "serviceType": "shipping_compliance",
+  "provider": "ComplianceCheck@0xA3f1...9C2B",
+  "quotedPrice": null,
+  "amount": null,
+  "paymentRef": null,
+  "complianceProofId": "CMP-PROOF-1776711311518",
+  "outcome": "pass",
+  "serviceIdentifier": "0xA3f1...9C2B:shipping_compliance",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711313675",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "GPrcvePmnt",
+    "GPins",
+    "GPins"
+  ],
+  "timestamp": "2026-04-20T18:55:13.675Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #12
+------------------------------------------------------------
+new_state          : GPrcvePmnt
+next_new_state     : ["SUCCESS", "GPins", "GPins"]
+associatedDocument : Product Payment Receipt
+timestamp          : 2026-04-20T18:55:20.674Z
+ipfsHash           : bafybei_fallback_1776711320674
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GPrcvePmnt",
+  "fromState": null,
+  "event": "GPrcvePmnt",
+  "serviceType": "receive_payment",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:55:18.529Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GPrcvePmnt",
+  "productId": "P381141238",
+  "serviceType": "receive_payment",
+  "provider": "MainChain",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "RCV-PMNT-00001",
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711320674",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "SUCCESS",
+    "GPins",
+    "GPins"
+  ],
+  "timestamp": "2026-04-20T18:55:20.674Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GPrcvePmnt",
+  "fromState": null,
+  "event": "GPrcvePmnt",
+  "serviceType": "receive_payment",
+  "productId": "P381141238",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-20T18:55:18.529Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "processPayment",
+  "serviceType": "receive_payment",
+  "input": {
+    "task": "GPrcvePmnt",
+    "description": "Receive product payment from buyer (receivable)",
+    "invocationType": "On-chain",
+    "endpoint": "0xC9e4...7F3D @ MainChain (ChainID 1)",
+    "amount": 98,
+    "currency": "CAD",
+    "productId": "P381141238"
+  },
+  "timestamp": "2026-04-20T18:55:18.529Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "receive_payment",
+  "txHash": "0xrcvpmnt00001",
+  "status": true,
+  "provider": "MainChain",
+  "quotedPrice": null,
+  "paymentRef": "RCV-PMNT-00001",
+  "amount": 98,
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776711320674",
+  "documentName": "GPrcvePmnt_P381141238_payment.json",
+  "timestamp": "2026-04-20T18:55:20.674Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GPrcvePmnt",
+  "productId": "P381141238",
+  "serviceType": "receive_payment",
+  "provider": "MainChain",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "RCV-PMNT-00001",
+  "complianceProofId": null,
+  "outcome": null,
+  "serviceIdentifier": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776711320674",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "SUCCESS",
+    "GPins",
+    "GPins"
+  ],
+  "timestamp": "2026-04-20T18:55:20.674Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #13
+------------------------------------------------------------
+new_state          : SUCCESS
+next_new_state     : ["GPins", "GPins"]
+associatedDocument : N/A
+timestamp          : 2026-04-20T18:55:25.524Z
+ipfsHash           : N/A
+
+input:
+N/A
+
+output:
+N/A
+============================================================

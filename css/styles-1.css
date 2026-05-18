@@ -1,0 +1,103 @@
+/* Page layout for Exec-summary */
+.page-1 {
+  margin-top: 160px; /* offset for header + menu */
+  padding: 10px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* People section */
+.people-container-1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.person-1 {
+  display: flex;
+  width: 32%;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.person-img-1 img {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.person-info-1 p {
+  margin: 0;
+  line-height: 1;
+}
+
+/* Dividers */
+.divider-1 {
+  margin: 25px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+/* Problem & Solution */
+.problem-solution-1 {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+.problem-solution-1 .left-1 {
+  width: 50%;
+}
+
+.problem-solution-1 .right-1 {
+  width: 50%;
+}
+
+.problem-solution-1 .right-1 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.green-1 {
+  color: teal;
+}
+
+.blue-1 {
+  color: blue;
+}
+
+.red-1 {
+  color: red;
+}
+
+.larger-1 {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+/* Benefits & Notes */
+.benefits-notes-1 {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+.benefits-notes-1 .left-1,
+.benefits-notes-1 .right-1 {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+  .people-container-1, .problem-solution-1, .benefits-notes-1 {
+    flex-direction: column;
+  }
+  .person-1 { width: 100%; }
+  .page-1 { margin-top: 180px; padding: 8px; }
+}

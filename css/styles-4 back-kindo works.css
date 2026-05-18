@@ -1,0 +1,107 @@
+/* styles-4.css — for pubs-research.html */
+
+/* Reset and base typography */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #ffffff;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+/* --- Layout below fixed header and menu bar --- */
+.page-container-4 {
+  max-width: 1100px;
+  margin: 0 auto;
+  /* push content below fixed header (≈70px) + menu bar (≈50px) + spacing */
+  padding: 160px 25px 60px 25px;
+  box-sizing: border-box;
+}
+
+/* --- Page Title --- */
+.page-title-4 {
+  text-align: center;
+  font-size: 2em;
+  color: #004c4c;
+  margin-bottom: 25px;
+}
+
+/* --- Intro text --- */
+.intro-text-4 {
+  font-size: 1.05em;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* --- Section formatting --- */
+.section-4 {
+  border-top: 1px solid #b2d8d8;
+  padding-top: 25px;
+  margin-top: 40px;
+}
+
+.section-header-4 {
+  color: #006666;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.subheader-4 {
+  color: #008080;
+  font-size: 1.2em;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* --- Lists --- */
+ul {
+  margin-left: 25px;
+  margin-bottom: 15px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* --- Paragraphs --- */
+p {
+  margin-bottom: 15px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+/* --- Fixed header and menu (matches other pages) --- */
+.header-0,
+.menu-bar-0 {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-0 {
+  top: 0;
+  height: 70px;
+}
+
+.menu-bar-0 {
+  top: 70px;
+  height: 50px;
+}
+
+/* Ensure body scrolling works smoothly below fixed elements */
+body {
+  overflow-x: hidden;
+}
+

@@ -1,0 +1,3 @@
+Build blockchain lab website based on template from other profs…. 
+	https://latex.vercel.app/
+	https://bibbase.org/
