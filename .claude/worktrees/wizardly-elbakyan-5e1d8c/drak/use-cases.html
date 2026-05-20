@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRAK — Industry Use Cases</title>
+  <meta name="description" content="How DRAK automates blockchain smart contracts for supply chain, trade finance, manufacturing, and SME workflows." />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="../Assets/logo.svg" alt="Dalhousie Blockchain Lab" class="nav-brand-logo" />
+      <div>
+        <span class="nav-brand-name">DRAK</span>
+        <span class="nav-brand-sub">powered by TABS+R · Dalhousie Blockchain Lab</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="use-cases.html" class="active">Use Cases</a></li>
+      <li><a href="demo.html">Demo</a></li>
+      <li><a href="contact.html" class="nav-cta">Request a Pilot</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-tag">Industry Applications</div>
+    <h1>Use Cases</h1>
+    <p>DRAK is designed for any multi-party business workflow that requires coordination, trust, and accountability across organisational boundaries. Here are the four primary industrial applications.</p>
+  </div>
+
+  <!-- USE CASES -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="uc-full">
+
+        <!-- 1. Supply Chain & International Trade -->
+        <div class="uc-full-card">
+          <div class="uc-full-sidebar">
+            <div class="uc-full-icon">🚢</div>
+            <h2>Supply Chain &amp; International Trade</h2>
+            <p>Cross-border coordination of goods from producer to buyer across multiple jurisdictions, intermediaries, and regulatory regimes.</p>
+          </div>
+          <div class="uc-full-body">
+            <h3>The Challenge</h3>
+            <p>International trade involves a minimum of six parties — exporter, freight forwarder, customs broker, insurer, bank, and importer — each with their own systems, timelines, and information requirements. A single shipment may require 20–30 documents exchanged manually, creating delays, fraud risk, and costly reconciliation.</p>
+            <p>Traditional blockchains can record individual events but cannot enforce the coordinated, multi-step transaction logic that governs trade — who pays whom, when, and only if what conditions are satisfied.</p>
+
+            <h3>How DRAK Solves It</h3>
+            <p>A trade compliance officer models the entire trade workflow as a BPMN swimlane diagram — one lane per party — and specifies payment conditions, penalty clauses, and customs rules in a DMN decision table. DRAK generates a smart contract that:</p>
+            <div class="uc-benefits">
+              <div class="uc-benefit">Locks funds in escrow and releases them automatically only when delivery is confirmed on-chain by the appropriate parties</div>
+              <div class="uc-benefit">Coordinates customs clearance and freight forwarder confirmation as synchronised sub-transactions with individual abort/retry capability</div>
+              <div class="uc-benefit">Enforces documentary credit (letter of credit) conditions programmatically — no manual bank review required</div>
+              <div class="uc-benefit">Keeps shipper information private from the bank and payment amounts private from the shipper</div>
+              <div class="uc-benefit">Automatically re-routes if a carrier is unavailable using DRAK's live repair capability, without abandoning the entire transaction</div>
+            </div>
+
+            <h3>Business Impact</h3>
+            <p>Reduction in trade finance processing time from days to hours. Elimination of documentary fraud risk. Full audit trail with participant-level privacy. No blockchain developer required — the trade compliance team models and deploys the contract themselves.</p>
+          </div>
+        </div>
+
+        <!-- 2. Trade Finance & Banking -->
+        <div class="uc-full-card">
+          <div class="uc-full-sidebar">
+            <div class="uc-full-icon">🏦</div>
+            <h2>Trade Finance &amp; Banking</h2>
+            <p>Automated payment release, escrow management, and credit enforcement tied directly to real-world delivery and compliance events.</p>
+          </div>
+          <div class="uc-full-body">
+            <h3>The Challenge</h3>
+            <p>Trade finance instruments — letters of credit, standby LCs, bank guarantees, supply chain finance — involve complex conditional payment logic that today is enforced by manual document review, creating 5–10 day settlement delays, high operational costs, and significant fraud exposure. The financial industry loses an estimated $5 billion per year to trade finance fraud.</p>
+            <p>Existing blockchain trade finance pilots (Marco Polo, Contour, etc.) have struggled with adoption because they require all banks to join a shared platform and use custom smart contracts that are expensive to develop and maintain.</p>
+
+            <h3>How DRAK Solves It</h3>
+            <p>A trade finance analyst models the letter of credit conditions as a BPMN process and specifies documentary compliance rules in DMN. DRAK generates a blockchain smart contract that:</p>
+            <div class="uc-benefits">
+              <div class="uc-benefit">Verifies all required trade documents against DMN-specified conditions automatically before releasing payment</div>
+              <div class="uc-benefit">Manages escrow with full ACID guarantees — funds are never released partially or in ambiguous states</div>
+              <div class="uc-benefit">Supports standby LC conditions — automatic payment triggered if counterparty defaults within a defined window</div>
+              <div class="uc-benefit">Runs across Ethereum and Hyperledger Fabric simultaneously, allowing bank consortia and public verification in a single workflow</div>
+              <div class="uc-benefit">Enforces SOX and AML compliance rules embedded directly from the DMN model — audit logs are on-chain by design</div>
+            </div>
+
+            <h3>Business Impact</h3>
+            <p>Settlement time reduced from days to minutes for verified transactions. Operational cost per LC reduced by eliminating manual document checking. Fraud risk reduced to near zero for on-chain verified documents. Any bank with a BPMN modelling tool can deploy their own trade finance contracts — no shared platform dependency.</p>
+          </div>
+        </div>
+
+        <!-- 3. Manufacturing & Procurement -->
+        <div class="uc-full-card">
+          <div class="uc-full-sidebar">
+            <div class="uc-full-icon">🏭</div>
+            <h2>Manufacturing &amp; Industrial Procurement</h2>
+            <p>Multi-tier supplier coordination, conditional purchase orders, quality checkpoint enforcement, and automated payment release in production workflows.</p>
+          </div>
+          <div class="uc-full-body">
+            <h3>The Challenge</h3>
+            <p>Modern manufacturing relies on multi-tier supply chains with dozens of suppliers, sub-suppliers, and logistics partners. Coordinating purchase orders, tracking delivery milestones, verifying quality certifications, and releasing conditional payments requires significant manual intervention at each handoff — creating delays, disputes, and quality failures that are expensive to resolve.</p>
+            <p>Manufacturing firms that have explored blockchain for supplier coordination have faced the same barrier: writing smart contracts requires specialised developers who don't understand the manufacturing process, and manufacturing engineers who understand the process can't write smart contracts.</p>
+
+            <h3>How DRAK Solves It</h3>
+            <p>A procurement manager or process engineer models the purchase-to-pay workflow as BPMN and specifies quality acceptance criteria and payment milestones in DMN. DRAK generates contracts that:</p>
+            <div class="uc-benefits">
+              <div class="uc-benefit">Issue and track purchase orders on-chain, with each tier of the supply chain able to see and confirm only their relevant obligations</div>
+              <div class="uc-benefit">Gate payment release on quality certificate submission — no certificate, no payment, automatically enforced without disputes</div>
+              <div class="uc-benefit">Support nested sub-transaction rollback: if a Tier-2 supplier fails a quality checkpoint, only their sub-transaction aborts; Tier-1 and Tier-3 are unaffected</div>
+              <div class="uc-benefit">Trigger alternative sourcing contracts automatically if a primary supplier fails, using DRAK's repair capability</div>
+              <div class="uc-benefit">Maintain a tamper-proof audit trail of all quality certifications, delivery confirmations, and payment events for compliance reporting</div>
+            </div>
+
+            <h3>Business Impact</h3>
+            <p>Elimination of payment disputes through automated, condition-based release. Reduction in procurement cycle time. Early detection of supply chain disruptions through on-chain milestone tracking. Procurement teams model and deploy their own contracts — no IT project required.</p>
+          </div>
+        </div>
+
+        <!-- 4. SME Workflow Automation -->
+        <div class="uc-full-card">
+          <div class="uc-full-sidebar">
+            <div class="uc-full-icon">🏢</div>
+            <h2>SME Workflow Automation</h2>
+            <p>Making enterprise-grade blockchain automation accessible to small and medium enterprises without IT departments or blockchain expertise.</p>
+          </div>
+          <div class="uc-full-body">
+            <h3>The Challenge</h3>
+            <p>Blockchain technology offers significant advantages for SMEs that participate in international supply chains — reduced fraud, faster payment, lower transaction costs, and improved counterparty trust. But the cost and complexity of smart contract development has been a hard barrier. SMEs cannot afford $50,000–$200,000 custom blockchain development projects, and the developers they could hire don't understand their domain.</p>
+
+            <h3>How DRAK Solves It</h3>
+            <p>DRAK was designed from the ground up to be usable by business analysts with no blockchain knowledge. An SME employee with standard business analyst skills — ability to draw process flowcharts, familiarity with spreadsheet-style decision tables, and basic JSON file management — can complete the full workflow:</p>
+            <div class="uc-benefits">
+              <div class="uc-benefit">Draw the business process in any free BPMN tool (Camunda Modeler, BPMN.io) — both are free, web-based, and require no training beyond basic flowcharting</div>
+              <div class="uc-benefit">Specify business rules in a DMN decision table — the format is similar to a structured spreadsheet</div>
+              <div class="uc-benefit">Upload both XML files to the DRAK web tool — smart contracts and API are generated automatically in minutes</div>
+              <div class="uc-benefit">Deploy to a test or production blockchain network using DRAK's deployment interface — no command-line tools needed</div>
+              <div class="uc-benefit">Invoke the workflow via the generated API using JSON documents — the same JSON format used throughout modern business software</div>
+            </div>
+
+            <h3>Business Impact</h3>
+            <p>SMEs gain access to blockchain-grade trust guarantees for their trading relationships at a fraction of the cost of custom development. Organisations without dedicated IT departments can self-serve new workflow automation as their business evolves. The entire deployment cycle — from first BPMN diagram to live blockchain transaction — can be completed in under a day for straightforward workflows.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMON THREAD -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-tag">What Every Use Case Has in Common</div>
+      <h2 class="section-title">The five guarantees DRAK delivers across every industry</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <div class="card-title">Zero Blockchain Development Cost</div>
+          <div class="card-desc">No Solidity developers. No Hyperledger specialists. Your domain experts model in BPMN and DMN — languages they already know or can learn in days.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <div class="card-title">ACID Multi-Party Transactions</div>
+          <div class="card-desc">Every workflow gets full atomicity, consistency, isolation, and durability — including nested sub-transactions that can fail independently without collapsing the entire workflow.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <div class="card-title">Privacy Between Participants</div>
+          <div class="card-desc">Each party in a multi-participant workflow sees only their relevant data. Privacy is enforced by the generated contract logic, not by application-layer access control.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔧</div>
+          <div class="card-title">Adapt to Change Without Starting Over</div>
+          <div class="card-desc">Business processes change. Regulations change. Disruptions happen. DRAK's upgrade and repair capabilities let you evolve a running contract without abandoning its transaction history.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌐</div>
+          <div class="card-title">No Platform Lock-In</div>
+          <div class="card-desc">Your business process model is the asset — not the smart contract code. Retarget to a different blockchain simply by re-running DRAK's transformation engine on the same BPMN model.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h2>Have a specific workflow in mind?</h2>
+    <p>Request a pilot and our team will model your process and demonstrate a live DRAK deployment — at no cost to you.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-primary">Request a Pilot →</a>
+      <a href="contact.html#download" class="btn btn-secondary">Download Brochure</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">DRAK</div>
+        <div class="footer-brand-desc">Powered by TABS+R research from Dalhousie University's Blockchain Lab. Smart contract automation for industrial and commercial workflows.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="product.html">How It Works</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="demo.html">Try the Demo</a>
+        <a href="contact.html">Request a Pilot</a>
+      </div>
+      <div class="footer-col">
+        <h4>Research</h4>
+        <a href="../index.html">Exec Summary</a>
+        <a href="../exec-synopsis.html">Research Synopsis</a>
+        <a href="../pubs-research.html">Publications</a>
+        <a href="../people-pubs.html">Team</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html#pilot">Request a Pilot</a>
+        <a href="contact.html#download">Download Brochure</a>
+        <a href="https://blockchain.cs.dal.ca/">Blockchain Lab</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dalhousie Blockchain Lab · Dalhousie University &amp; Saint Mary's University</span>
+      <span>DRAK — Tool for Automated Transformation of BPMN Models into Smart Contracts (TABS+R)</span>
+    </div>
+  </footer>
+
+</body>
+</html>

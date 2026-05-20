@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <title>Dalhousie University Virtual Blockchain Lab</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="row">
+      <div class="col-md-3">
+        <img style="width: 50%" src="PB-picture.png"/>
+
+        <h4>Dr. Peter Bodorik </h4>
+        Professor, Faculty of Computer Science<br/>
+        <a href="https://www.dal.ca/">Dalhousie University</a>,<br/>
+        Room 316, Faculty of Computer Science Building<br/>
+        Email: Peter.Bodorik@dal.ca<br/>
+        Phone: 902-494-6452<br>
+
+
+        <p>
+          Links:
+          <ul>
+            <li><a href="https://blockchain.cs.dal.ca/">@DAL</a></li>
+            <li><a href="https://www.linkedin.com/in/peter-bodorik-5163268/?originalSubdomain=ca">@Linkedin</a></li>
+          </ul>
+        </p>
+
+    </div>
+
+
+
+      <!-- .................................. -->
+
+      <div class="col-md-9">
+        <!-- <p style="text-align: center;">
+          <img style="
+          transform: scale(0.5, 0.5);
+-ms-transform: scale(0.5, 0.5);
+-webkit-transform: scale(0.5, 0.5);
+          "src="job-post-banner-dalhousie-university.jpg">
+
+        </p> -->
+        <h3>Peter Bodorik, Professor, Faculty of Computer Science, Dalhousie University</h3>
+        <p>
+          <b>Office Hours</b>: Email Peter.Bodorik@dal.ca to meet virtually or in-person
+
+
+        </p>
+<!-- <hr> -->
+<p>
+  <b>Past and Current Academic Administration:</b> Associate Dean, Academic; Associate Dean, Research (Acting); Director of Master of Electronic Commerce program; Chair and/or member of many University, Faculty, or departmental committees
+
+
+</p>
+<!-- <hr> -->
+<p>
+  <b>Graduate Student Supervision:</b> Over 80 graduate students (co)supervised in master and PhD programs
+
+
+</p>
+<p>
+  <b>Publications:</b> Over 100 publications in refereed conferences and journals
+
+
+</p>
+<p>
+  <b>Patents:</b> Four patents granted and one applications (non-provisional and utility patent)
+
+
+</p>
+
+<p>
+  <b>Current Research Interests and Publications:</b> Blockchain technology with concentration on
+  <ul>
+<li>
+  -	Automated creation of blockchain smart contracts from a BPMN model of a distributed application
+</li>
+<li>
+  -	Support for trade transactions that include collaborations of many actors over a long period of time
+
+</li>
+  </ul>
+
+
+</p>
+        <hr>
+
+        <h2>Recent publications:</h2>
+
+        <script src="https://bibbase.org/show?bib=https://blockchain.cs.dal.ca/pubs_without_questionmarks.bib&theme=default&jsonp=1&groupby=year&sort=author_short&urlLabel=Paper"></script>
+
+        <hr>
+        <h2>Patents</h2>
+
+        <script src="https://bibbase.org/show?bib=https://blockchain.cs.dal.ca/patents.bib&theme=default&jsonp=1&groupby=year&sort=author_short&urlLabel=Paper"></script>
+
+
+
+        <script src="common.js"></script>
+      </div>
+    </div>
+
+  </body>
+</html>

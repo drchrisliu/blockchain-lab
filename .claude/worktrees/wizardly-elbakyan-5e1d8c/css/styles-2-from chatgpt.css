@@ -1,0 +1,117 @@
+/* =====================================
+   Exec-synopsis page styles (page 2)
+   ===================================== */
+
+/* Page container: ensures it starts below the fixed header and menu */
+.page-2 {
+  margin-top: 165px; /* height of fixed header + menu */
+  padding: 10px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+/* Page title - centered and large */
+.page-title-2 {
+  text-align: center;
+  font-size: 2.0rem;
+  font-weight: 700;
+  color: teal;
+  margin: 16px 0 22px 0;
+}
+
+/* Headings for each section */
+.title-2 {
+  color: teal;
+  font-size: 1.35em;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* =====================================
+   First split container (text + image)
+   ===================================== */
+.container-split-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* vertically centers image relative to text */
+  gap: 20px;
+  padding: 10px 5px;
+  box-sizing: border-box;
+}
+
+/* Left and right sections */
+.left-2,
+.right-2 {
+  width: 50%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* --- Improved right part (desktop) --- */
+.right-2 {
+  display: flex;               /* enables vertical centering */
+  justify-content: center;     /* centers image horizontally */
+  align-items: center;         /* centers image vertically relative to text */
+}
+
+.right-2 img {
+  width: 100%;
+  height: auto;
+  max-height: 90%;             /* limits image height */
+  display: block;
+  margin-top: 20px;            /* space above */
+  margin-bottom: 20px;         /* space below */
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  object-fit: contain;         /* keeps proportions */
+}
+
+/* =====================================
+   Remaining containers (2–8)
+   ===================================== */
+.container-2 {
+  padding: 10px 5px;
+  box-sizing: border-box;
+}
+
+.container-2 ul {
+  margin-left: 20px;
+  padding-left: 0;
+  line-height: 1.5em;
+}
+
+/* Dividing lines between containers */
+.divider-2 {
+  border: none;
+  border-top: 1px solid #d3d3d3;
+  margin: 18px 0;
+}
+
+/* =====================================
+   Responsive layout
+   ===================================== */
+@media (max-width: 800px) {
+  .container-split-2 {
+    flex-direction: column;
+    align-items: flex-start; /* stack vertically on small screens */
+  }
+
+  .left-2,
+  .right-2 {
+    width: 100%;
+  }
+
+  /* --- Updated image rule for small screens --- */
+  .right-2 img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    object-fit: contain;
+  }
+}

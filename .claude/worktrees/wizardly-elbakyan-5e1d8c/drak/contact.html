@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRAK — Request a Pilot &amp; Download Resources</title>
+  <meta name="description" content="Request a DRAK pilot engagement or download our brochure and technical materials." />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="../Assets/logo.svg" alt="Dalhousie Blockchain Lab" class="nav-brand-logo" />
+      <div>
+        <span class="nav-brand-name">DRAK</span>
+        <span class="nav-brand-sub">powered by TABS+R · Dalhousie Blockchain Lab</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="use-cases.html">Use Cases</a></li>
+      <li><a href="demo.html">Demo</a></li>
+      <li><a href="contact.html" class="nav-cta active">Request a Pilot</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-tag">Get Started</div>
+    <h1>Request a Pilot &amp; Resources</h1>
+    <p>Take the next step — request a no-cost pilot engagement with the Dalhousie Blockchain Lab team, or download our brochure and technical materials to share with your organisation.</p>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <section class="section" id="pilot">
+    <div class="section-inner">
+      <div class="contact-grid">
+
+        <!-- PILOT REQUEST FORM -->
+        <div>
+          <div class="form-card">
+            <h2>Request a Pilot Engagement</h2>
+            <p>Tell us about your organisation and the workflow you'd like to automate. Our team will reach out within 2 business days to schedule an initial scoping call — at no cost or commitment.</p>
+
+            <form action="#" method="post" onsubmit="handleSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name *</label>
+                  <input type="text" id="first-name" name="first_name" required placeholder="Jane" />
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name *</label>
+                  <input type="text" id="last-name" name="last_name" required placeholder="Smith" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Business Email *</label>
+                <input type="email" id="email" name="email" required placeholder="jane.smith@company.com" />
+              </div>
+
+              <div class="form-group">
+                <label for="organisation">Organisation *</label>
+                <input type="text" id="organisation" name="organisation" required placeholder="Acme Corp" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="role">Your Role *</label>
+                  <select id="role" name="role" required>
+                    <option value="" disabled selected>Select your role</option>
+                    <option>Chief Executive / C-Suite</option>
+                    <option>VP / Director</option>
+                    <option>Supply Chain Manager</option>
+                    <option>Trade Finance Manager</option>
+                    <option>IT / Technology Lead</option>
+                    <option>Procurement Manager</option>
+                    <option>Business Analyst</option>
+                    <option>Operations Manager</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="industry">Industry *</label>
+                  <select id="industry" name="industry" required>
+                    <option value="" disabled selected>Select industry</option>
+                    <option>Supply Chain &amp; Logistics</option>
+                    <option>Trade Finance &amp; Banking</option>
+                    <option>Manufacturing</option>
+                    <option>Import / Export</option>
+                    <option>Retail &amp; Distribution</option>
+                    <option>Energy &amp; Resources</option>
+                    <option>Government &amp; Public Sector</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="workflow">Describe the workflow you'd like to automate *</label>
+                <textarea id="workflow" name="workflow" required placeholder="e.g. We coordinate payment release across 4 parties in our import process. Currently takes 5–7 days of manual document review. We process approximately 200 shipments per month..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="blockchain">Preferred blockchain platform (if known)</label>
+                <select id="blockchain" name="blockchain">
+                  <option value="" selected>No preference / Not sure</option>
+                  <option>Ethereum (public or private)</option>
+                  <option>Hyperledger Fabric</option>
+                  <option>Both / Multi-chain</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="timeline">Intended timeline</label>
+                <select id="timeline" name="timeline">
+                  <option value="" selected>Exploring / No fixed timeline</option>
+                  <option>Within 1 month</option>
+                  <option>1–3 months</option>
+                  <option>3–6 months</option>
+                  <option>6–12 months</option>
+                </select>
+              </div>
+
+              <button type="submit" class="form-submit">Submit Pilot Request →</button>
+              <div class="form-note">No commitment required. The Dalhousie Blockchain Lab team will contact you within 2 business days.</div>
+            </form>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: DOWNLOADS + CONTACT INFO -->
+        <div>
+
+          <!-- DOWNLOADS -->
+          <div class="download-card" id="download">
+            <h2>📄 Download Resources</h2>
+            <p>Share DRAK with decision-makers in your organisation. All materials are freely available — no form required to download.</p>
+
+            <div class="download-item">
+              <div class="dl-icon">📋</div>
+              <div class="dl-info">
+                <h4>Executive Brochure</h4>
+                <p>2-page overview of DRAK for business decision-makers. Problem, solution, use cases, and next steps.</p>
+              </div>
+              <a href="../index.html" class="dl-btn">View</a>
+            </div>
+
+            <div class="download-item">
+              <div class="dl-icon">📊</div>
+              <div class="dl-info">
+                <h4>Executive Synopsis</h4>
+                <p>Technical overview of the TABS+R research and DRAK's transformation architecture for technical evaluators.</p>
+              </div>
+              <a href="../exec-synopsis.html" class="dl-btn">View</a>
+            </div>
+
+            <div class="download-item">
+              <div class="dl-icon">🎓</div>
+              <div class="dl-info">
+                <h4>Research Publications</h4>
+                <p>Full collection of peer-reviewed publications (ACM, IEEE, Elsevier) underlying DRAK's technology.</p>
+              </div>
+              <a href="../pubs-research.html" class="dl-btn">View</a>
+            </div>
+
+            <div class="download-item">
+              <div class="dl-icon">📄</div>
+              <div class="dl-info">
+                <h4>TABS+R Full Paper (2024)</h4>
+                <p>ACM DLT journal paper on nested collaborative transactions — the core DRAK transaction model.</p>
+              </div>
+              <a href="../papers/10 23 ACM-DLT.pdf" target="_blank" class="dl-btn">PDF</a>
+            </div>
+
+            <div class="download-item">
+              <div class="dl-icon">📄</div>
+              <div class="dl-info">
+                <h4>TABS Paper (Elsevier, 2023)</h4>
+                <p>The foundational TABS paper: complete BPMN-to-smart-contract transformation system.</p>
+              </div>
+              <a href="../papers/7 Elsevier BCRA 23 TABS Transforming automatically BPMN models into blockchain.pdf" target="_blank" class="dl-btn">PDF</a>
+            </div>
+
+          </div>
+
+          <!-- CONTACT DETAILS -->
+          <div class="contact-info-card">
+            <h3>Contact the DRAK Team</h3>
+            <div class="ci-item">
+              <div class="ci-icon">🏫</div>
+              <div class="ci-text">
+                <strong>Dalhousie Blockchain Lab</strong>
+                Faculty of Computer Science, Dalhousie University<br />
+                Halifax, Nova Scotia, Canada
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon">🔬</div>
+              <div class="ci-text">
+                <strong>Research Investigators</strong>
+                Dr. Christian G. Liu &amp; Dr. Peter Bodorik (Dalhousie University)<br />
+                Dr. Dawn Jutla (Saint Mary's University, Sobey School of Business)
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon">🌐</div>
+              <div class="ci-text">
+                <strong>Lab Website</strong>
+                <a href="https://blockchain.cs.dal.ca/" target="_blank" rel="noopener" style="color:var(--teal);">blockchain.cs.dal.ca</a>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon">🧪</div>
+              <div class="ci-text">
+                <strong>Live Demo Environment</strong>
+                <a href="https://quinpool.com:19000/" target="_blank" rel="noopener" style="color:var(--teal);">quinpool.com:19000</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-tag">After You Apply</div>
+      <h2 class="section-title">What to expect from a DRAK pilot</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-title">Scoping Call</div>
+          <div class="step-desc">Within 2 business days of your request, a member of the Dalhousie Blockchain Lab team will contact you to discuss your workflow and confirm the pilot scope. Typically 30–60 minutes.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-title">Workflow Modelling</div>
+          <div class="step-desc">Our team works with your business analysts to model your workflow in BPMN and DMN. We handle the modelling — you provide domain knowledge. Typically a 2–4 hour session.</div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-title">Live Demo &amp; Report</div>
+          <div class="step-desc">We deploy the generated smart contract to a test environment, execute a sample transaction end-to-end, and deliver a written pilot report with cost analysis and next-step recommendations.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">DRAK</div>
+        <div class="footer-brand-desc">Powered by TABS+R research from Dalhousie University's Blockchain Lab. Smart contract automation for industrial and commercial workflows.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="product.html">How It Works</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="demo.html">Try the Demo</a>
+        <a href="contact.html">Request a Pilot</a>
+      </div>
+      <div class="footer-col">
+        <h4>Research</h4>
+        <a href="../index.html">Exec Summary</a>
+        <a href="../exec-synopsis.html">Research Synopsis</a>
+        <a href="../pubs-research.html">Publications</a>
+        <a href="../people-pubs.html">Team</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html#pilot">Request a Pilot</a>
+        <a href="contact.html#download">Download Brochure</a>
+        <a href="https://blockchain.cs.dal.ca/">Blockchain Lab</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dalhousie Blockchain Lab · Dalhousie University &amp; Saint Mary's University</span>
+      <span>DRAK — Tool for Automated Transformation of BPMN Models into Smart Contracts (TABS+R)</span>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = '✓ Request submitted — we\'ll be in touch within 2 business days';
+      btn.style.background = 'var(--teal)';
+      btn.disabled = true;
+    }
+  </script>
+
+</body>
+</html>

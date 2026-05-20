@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRAK — Try the Demo</title>
+  <meta name="description" content="Try DRAK's live proof-of-concept tool — transform a BPMN business process model into a blockchain smart contract in minutes." />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="../Assets/logo.svg" alt="Dalhousie Blockchain Lab" class="nav-brand-logo" />
+      <div>
+        <span class="nav-brand-name">DRAK</span>
+        <span class="nav-brand-sub">powered by TABS+R · Dalhousie Blockchain Lab</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="use-cases.html">Use Cases</a></li>
+      <li><a href="demo.html" class="active">Demo</a></li>
+      <li><a href="contact.html" class="nav-cta">Request a Pilot</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-tag">Live Proof of Concept</div>
+    <h1>Try DRAK</h1>
+    <p>Experience the DRAK transformation pipeline hands-on. Upload a BPMN model and watch it become a deployable smart contract — no installation, no account required.</p>
+  </div>
+
+  <!-- DEMO LINK -->
+  <section class="section">
+    <div class="section-inner">
+
+      <div class="demo-link-box">
+        <h2>DRAK Live Proof-of-Concept Tool</h2>
+        <p>The live POC environment is hosted by the Dalhousie Blockchain Lab. Access it directly in your browser — no sign-up or software installation needed.</p>
+        <a href="https://quinpool.com:19000/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.1rem;padding:1rem 2.25rem;">
+          Launch DRAK Demo →
+        </a>
+        <p style="margin-top:1rem;font-size:.82rem;color:rgba(255,255,255,.4);">Hosted at quinpool.com · Dalhousie Blockchain Lab research environment</p>
+      </div>
+
+      <!-- What to expect -->
+      <div class="demo-grid">
+        <div class="demo-card">
+          <h3>🧪 What the Demo Shows</h3>
+          <p>The POC tool demonstrates DRAK's core transformation pipeline end-to-end. You can observe:</p>
+          <ol class="demo-steps">
+            <li>Uploading a BPMN XML file (sample files are provided in the tool)</li>
+            <li>Uploading a DMN XML file with business rules</li>
+            <li>DRAK analysing the models and generating the DE-HSM intermediate representation</li>
+            <li>Viewing the generated Solidity smart contract code and REST API specification</li>
+            <li>Simulating a transaction execution through the generated API</li>
+          </ol>
+        </div>
+
+        <div class="demo-card">
+          <h3>📋 Before You Start</h3>
+          <p>To get the most from the demo, you can use the provided sample BPMN models or create your own. If you want to try with your own process:</p>
+          <ol class="demo-steps">
+            <li>Draw your process at <a href="https://bpmn.io" target="_blank" rel="noopener" style="color:var(--teal);">bpmn.io</a> (free, no sign-up) — export as XML</li>
+            <li>Optionally define decision rules at <a href="https://demo.bpmn.io/dmn" target="_blank" rel="noopener" style="color:var(--teal);">demo.bpmn.io/dmn</a> — export as XML</li>
+            <li>Upload both files to the DRAK demo tool</li>
+            <li>Review the generated smart contract and API output</li>
+          </ol>
+        </div>
+
+        <div class="demo-card">
+          <h3>🔗 Supported Blockchain Targets</h3>
+          <p>In the current POC environment, DRAK generates contracts for:</p>
+          <ol class="demo-steps">
+            <li><strong>Ethereum</strong> — Solidity smart contracts compatible with EVM-based networks including testnets</li>
+            <li><strong>Hyperledger Fabric</strong> — Golang chaincode for permissioned enterprise blockchain networks</li>
+          </ol>
+          <p style="margin-top:1rem;">Multi-chain deployment (both simultaneously) and cross-chain sub-transaction routing are available in the full product — contact us for a pilot demonstration.</p>
+        </div>
+
+        <div class="demo-card">
+          <h3>❓ Having Trouble?</h3>
+          <p>The POC environment is a research tool. If you encounter any issues or have questions about what you're seeing:</p>
+          <ol class="demo-steps">
+            <li>Review the <a href="product.html" style="color:var(--teal);">How It Works</a> page for background on each transformation step</li>
+            <li>Download the <a href="contact.html#download" style="color:var(--teal);">technical brochure</a> for a guided walkthrough with annotated screenshots</li>
+            <li><a href="contact.html" style="color:var(--teal);">Contact the team</a> — we're happy to walk through the tool in a live call</li>
+          </ol>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SAMPLE SCENARIOS -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-tag">Sample Scenarios</div>
+      <h2 class="section-title">Pre-built BPMN models to explore in the demo</h2>
+      <p class="section-sub">The demo tool includes several pre-built BPMN models representing real industrial workflows. Start with these to understand what DRAK produces before uploading your own process.</p>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🚢</div>
+          <div class="card-title">International Trade Scenario</div>
+          <div class="card-desc">A five-party cross-border trade workflow: exporter, freight forwarder, customs broker, bank, and importer. Demonstrates nested sub-transactions, letter of credit conditions, and delivery-triggered payment release.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏭</div>
+          <div class="card-title">Purchase-to-Pay (Manufacturing)</div>
+          <div class="card-desc">A three-tier procurement workflow: OEM manufacturer, Tier-1 supplier, and Tier-2 sub-supplier. Shows quality checkpoint gating, conditional payment release, and independent sub-transaction rollback.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🏦</div>
+          <div class="card-title">Trade Finance — Letter of Credit</div>
+          <div class="card-desc">A four-party letter of credit workflow with documentary compliance checking. Demonstrates DMN-driven compliance verification, ACID payment management, and full audit trail generation.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">🛠️</div>
+          <div class="card-title">Contract Repair Demonstration</div>
+          <div class="card-desc">Walks through a mid-transaction disruption scenario — a shipping route becomes unavailable — and demonstrates DRAK's repair capability: identifying the failing sub-transaction, amending the BPMN fragment, and resuming the workflow.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEYOND THE DEMO -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">Beyond the Demo</div>
+      <h2 class="section-title">What a full DRAK pilot includes</h2>
+      <p class="section-sub">The POC tool demonstrates the transformation pipeline. A pilot engagement with the Dalhousie Blockchain Lab team goes further — applying DRAK to your actual business workflows.</p>
+      <div class="cards-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));">
+        <div class="card">
+          <div class="card-icon">🗺️</div>
+          <div class="card-title">Workflow Mapping Session</div>
+          <div class="card-desc">Our team works with your business analysts to identify and model one of your existing workflows in BPMN — typically a 2–4 hour collaborative session that produces a complete BPMN diagram ready for DRAK.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <div class="card-title">Live Deployment on Your Network</div>
+          <div class="card-desc">We deploy the generated smart contract to a test environment connected to your preferred blockchain network — Ethereum testnet, a private Hyperledger Fabric network, or both — and execute a sample transaction end-to-end.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <div class="card-title">Cost &amp; Timeline Analysis</div>
+          <div class="card-desc">We provide a full analysis of transaction costs (gas estimates for your specific workflow), projected time savings versus manual processes, and a production deployment timeline — specific to your use case.</div>
+        </div>
+        <div class="card">
+          <div class="card-icon">📄</div>
+          <div class="card-title">Pilot Report</div>
+          <div class="card-desc">Every pilot concludes with a written report: the generated BPMN model, the smart contract code, the API specification, cost analysis, and recommendations for production deployment or workflow expansion.</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="contact.html" class="btn btn-primary">Request a Pilot Engagement →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h2>Ready to go beyond the demo?</h2>
+    <p>Request a pilot and we'll deploy DRAK on your actual business workflow — at no cost, with a full written report.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-primary">Request a Pilot →</a>
+      <a href="contact.html#download" class="btn btn-secondary">Download Brochure</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">DRAK</div>
+        <div class="footer-brand-desc">Powered by TABS+R research from Dalhousie University's Blockchain Lab. Smart contract automation for industrial and commercial workflows.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="product.html">How It Works</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="demo.html">Try the Demo</a>
+        <a href="contact.html">Request a Pilot</a>
+      </div>
+      <div class="footer-col">
+        <h4>Research</h4>
+        <a href="../index.html">Exec Summary</a>
+        <a href="../exec-synopsis.html">Research Synopsis</a>
+        <a href="../pubs-research.html">Publications</a>
+        <a href="../people-pubs.html">Team</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html#pilot">Request a Pilot</a>
+        <a href="contact.html#download">Download Brochure</a>
+        <a href="https://blockchain.cs.dal.ca/">Blockchain Lab</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dalhousie Blockchain Lab · Dalhousie University &amp; Saint Mary's University</span>
+      <span>DRAK — Tool for Automated Transformation of BPMN Models into Smart Contracts (TABS+R)</span>
+    </div>
+  </footer>
+
+</body>
+</html>

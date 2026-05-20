@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dalhousie Blockchain Lab – Exec Synopsis</title>
+
+  <!-- Common and page-specific styles -->
+  <link rel="stylesheet" href="css/styles-0.css" />
+  <link rel="stylesheet" href="css/styles-2.css" />
+</head>
+
+<body>
+
+  <!-- Fixed Header -->
+  <header class="header-0">
+    <div class="header-left-0">
+      <img src="Assets/logo.svg" alt="Dalhousie Blockchain Lab Logo" />
+    </div>
+    <div class="header-right-0">
+      <h1>Dalhousie Blockchain Lab</h1>
+      <h2>Smart Contract as a Service – <span class="red-0">SCaaS</span></h2>
+      <h3>Investigators: Drs. C. Liu & P. Bodorik, Dalhousie University, and Dr. D. Jutla, Saint Mary’s University</h3>
+    </div>
+  </header>
+
+  <!-- Fixed Menu -->
+  <nav class="menu-0">
+    <ul>
+      <li><a href="index.html" >Exec-summary</a></li>
+      <li><a href="exec-synopsis.html" class="active-0">Exec-synopsis</a></li>
+      <li><a href="research-synopsis.html">Research-synopsis</a></li>
+      <li><a href="pubs-research.html">Pubs-research</a></li>
+      <li><a href="people-pubs.html">People-pubs</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="try-scaas.html">Try-SCaaS</a></li>
+      <li><a href="new-projects.html">New-projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Page Content -->
+  <main class="page-2">
+    <!-- Page title centered -->
+       <h1 class="page-title-2">Exec Synopsis</h1>
+
+    <!-- Container 1: Split left/right -->
+    <section class="container-split-2">
+      <div class="left-2">
+       <h2 class="title-2">Dramatically reduce cost and time for smart contract development</h2>
+
+        <ul class="outer-2">
+          <li>Business Analyst (BA) uses the following six steps to create a model, representing 
+            the trade activity processes and their business logic, and then transform the model 
+            into a smart contract deployed on a target blockchain:
+            <ol> 
+              <li>Uses a graphical diagramming tool to create a model of the business processes expressed using the 
+                Business Process Management Notation (BPMN). The model is stored in an XML file.</li>
+              <li> Uses a graphical diagraming tool to create a model of the business logic for the business processses 
+                created in the previous step. </li>
+            </ol>
+          <li>BA uses the SCaaS tool (aka TABS tool in research papers) to
+            <ol start="3">
+              <li>Transform the BPMN model to smart contracts and API</li>
+              <li>Deploy the smart contract(s) and prepare API</li>
+            </ol>
+          </li>
+          <li>BA prepares information necessary for the trading activity and starts the trading activity. 
+            To achieve that, BA performs the following steps:
+            <ol start="5">
+              <li>Uses a JSON or text editor to create JSON files that contain information, 
+                such as customs or insurance documents, necessary for the trading activity.
+              </li>
+              <li>Tells SCaaS to initiate the trade activity by invoking the API while providing it with 
+                appropriate information contained in the JSON files. 
+                API methods invoke the smart contracdt methods with approprite information.
+              </li>
+            </ol>
+          <li>Software developer task is greatly reduced as the SCaaS tool prepares the smart contract(s) and API.
+            <ul class="inner-dash-2">
+              <li>If the business logic is described by BA using a DMN model, then the software developer assistance is not needed.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="right-2">
+        <img src="Assets/Exec-synopsis-figure.svg" alt="SCaaS Illustration 26th" />
+      </div>
+    </section>
+
+    <hr class="divider-2" />
+
+    <!-- Remaining containers (2–8) -->
+    <section class="container-2">
+      <h2 class="title-2">Privacy</h2>
+      <ul>
+        <li>Trade activity may include several participants, such as shippers, insurers, ports, customs, and auditors, who deal with different aspects of the trade activity. SCaaS tool provides privacy by allowing a participant to access only information pertaining to their aspect of the trade activity.</li>
+      </ul>
+    </section>
+
+    <hr class="divider-2" />
+
+    <section class="container-2">
+      <h2 class="title-2">Portability</h2>
+      <ul>
+        <li>Smart contract can be generated for various blockchains. 
+          Portability is facilitated by representing the collaboration activities using multi-modal modeling at
+           a high level of abstraction and then transforming the model into a smart contract(s) and deploying it 
+          on the target blockchain. Currently, Ethereum and Hyperledger Fabric blockchains are supported for 
+          automated deployment.</li>
+      </ul>
+    </section>
+
+    <hr class="divider-2" />
+
+    <section class="container-2">
+      <h2 class="title-2">Nested multi-step transaction</h2>
+      <ul>
+        <li>A blockchain transaction is defined to contain writes to the ledger made by an execution of 
+          any smart contract method. However, a trade activity typically includes collaboration of several actors, 
+          such as shippers, insurers and customs, each one executing its smart contract method(s). 
+          Such a collaboration frequetnly needs to be synchronized and treated as an atomic activity that either 
+          completes all of its activities successfully or does not leave any trace of its partially 
+          executed activities. 
+          <li>To support such multi-step atomic activities, we developed the concept of 
+          a <em><strong>multi-step transaction</strong></em> spanning execution of several smart contract methods. 
+          Our methodology provides an option to the BPMN modeler to identify which activities should be defined 
+          as an atomic transaction and provide for automated generation of a transaction mechanism that 
+          enforces transactional properties. Thus, to use multi-step transaction, all that needs to be done 
+          is to identify methods that belong to each multi-step transaction, while the transaction mechanism 
+          is automatically generated by the SCaaS tool.</li>
+        <li>Support for enforcement of <em><strong>nested multi-step transactions</strong></em> is also provided in automated fashion.</li>
+      </ul>
+    </section>
+
+    <hr class="divider-2" />
+
+    <section class="container-2">
+      <h2 class="title-2">Sidechain processing</h2>
+      <ul>
+        <li>Expensive computation can be off-loaded to a cheaper sidechain. 
+          SCaaS calculates the overhead cost of performing the computation on a sidechain, and if it is less than 
+          the estimated cost of overhead associated with sidechain processing, our SCaaS tool deploys 
+          the computation on a sidechain for cost reduction.</li>
+      </ul>
+    </section>
+
+    <hr class="divider-2" />
+
+    <section class="container-2">
+      <h2 class="title-2">Smart contract upgrade</h2>
+      <ul>
+        <li>Smart contract is software, and software engineering established that software needs to be upgradable 
+          to fix bugs and, more importantly, introduce new features. SCaaS provides for an upgrade of a smart contract 
+         (as blockchain is immutable, upgrade is achieved through mappings to achieve a smart contract replacement).</li>
+      </ul>
+    </section>
+
+    <hr class="divider-2" />
+
+    <section class="container-2">
+      <h2 class="title-2">Smart contract repair</h2>
+      <ul>
+        <li>Smart contract may fail due to external conditions preventing its completion. We provide a mechanism 
+          that enables amending the smart contract while retaining already completed activities, thus facilitating 
+          repair. This is feasible through utilization of nested transaction within the trade activity and 
+          their synchronization.</li>
+      </ul>
+    </section>
+
+    <hr class="divider-2" />
+
+    <section class="container-2">
+      <h2 class="title-2">Compliance Enforcement and Reporting</h2>
+      <ul>
+        <li>Smart contracts deal with trade activities that need to comply with various regulations and reporting 
+          requirements, such as U.S. SOX or HIPPA, standards, and internal corporate policies, amongst others. 
+          We are currently investigating how such compliance and reporting requirements can be represented and 
+          managed, and how they can be enforced. 
+</li>
+      </ul>
+    </section>
+
+    <hr class="divider-2" />
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DRAK — How It Works</title>
+  <meta name="description" content="How DRAK transforms BPMN business process models into production-ready blockchain smart contracts using DE-HSM multi-modal modeling." />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">
+      <img src="../Assets/logo.svg" alt="Dalhousie Blockchain Lab" class="nav-brand-logo" />
+      <div>
+        <span class="nav-brand-name">DRAK</span>
+        <span class="nav-brand-sub">powered by TABS+R · Dalhousie Blockchain Lab</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="product.html" class="active">Product</a></li>
+      <li><a href="use-cases.html">Use Cases</a></li>
+      <li><a href="demo.html">Demo</a></li>
+      <li><a href="contact.html" class="nav-cta">Request a Pilot</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-tag">Product Deep-Dive</div>
+    <h1>How DRAK Works</h1>
+    <p>A six-step workflow that takes your business process model from a graphical diagram to a live, production-grade blockchain smart contract — with no blockchain expertise required at any step.</p>
+  </div>
+
+  <!-- SIX-STEP WORKFLOW -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">The Workflow</div>
+      <h2 class="section-title">Six steps from model to live blockchain</h2>
+      <p class="section-sub">Business analysts, not blockchain developers, own every step. Software developer assistance is only needed if business logic cannot be fully expressed in DMN.</p>
+
+      <div class="workflow-steps">
+
+        <div class="workflow-step">
+          <div class="ws-num">1</div>
+          <div class="ws-content">
+            <div class="ws-tag">Input — Business Process</div>
+            <h3>Create a BPMN Model of Your Workflow</h3>
+            <p>Use any standard BPMN graphical modelling tool (such as Camunda Modeler or BPMN.io) to draw your business process as a swimlane diagram. Each lane represents a participant — producer, shipper, bank, customs agent, insurer. The tool outputs a standard XML file. No coding. No blockchain knowledge needed at this stage.</p>
+          </div>
+        </div>
+
+        <div class="workflow-step">
+          <div class="ws-num">2</div>
+          <div class="ws-content">
+            <div class="ws-tag">Input — Business Rules</div>
+            <h3>Create a DMN Model for Decision Logic</h3>
+            <p>Use a DMN (Decision Model and Notation) editor to define the business rules and decision tables that govern your workflow — for example, "if shipment is delayed more than 5 days, apply penalty clause." DMN is an OMG standard, readable by any business analyst. If all business logic is fully expressed here, no software developer is required for any subsequent step.</p>
+          </div>
+        </div>
+
+        <div class="workflow-step">
+          <div class="ws-num">3</div>
+          <div class="ws-content">
+            <div class="ws-tag">Core Innovation — DE-HSM Transformation</div>
+            <h3>DRAK Transforms Your Models into Smart Contracts &amp; API</h3>
+            <p>This is where DRAK's core innovation operates. The engine ingests your BPMN and DMN XML files and performs a multi-stage transformation:</p>
+            <p><strong>Graph analysis:</strong> The BPMN model is parsed into a directed graph representation capturing all participants, activities, gateways, and sequence flows.</p>
+            <p><strong>DE-HSM modeling:</strong> The graph is transformed into a Discrete Event / Hierarchical State Machine (DE-HSM) multi-modal model. Discrete Event (DE) components model timing and temporal coordination between participants; Hierarchical State Machines (HSMs) model functional state transitions within each participant's scope.</p>
+            <p><strong>Blockchain-independent intermediate representation:</strong> The DE-HSM model is encoded into a structured data representation that is independent of any specific blockchain platform. This is the key to portability — the same intermediate model can target Ethereum or Hyperledger Fabric without modification.</p>
+            <p><strong>Code generation:</strong> DRAK generates smart contract code and a REST API. The generated smart contract embeds the DE-HSM data structure and a main interpreter method that checks state, determines valid transitions, manages participant synchronisation, and enforces ACID properties automatically.</p>
+          </div>
+        </div>
+
+        <div class="workflow-step">
+          <div class="ws-num">4</div>
+          <div class="ws-content">
+            <div class="ws-tag">Deployment</div>
+            <h3>Deploy Smart Contract(s) to Your Target Blockchain</h3>
+            <p>The generated smart contract is deployed to your chosen blockchain network — Ethereum (public or private), Hyperledger Fabric, or both simultaneously for cross-chain workflows. DRAK supports nested sub-transactions deployed as separate smart contracts on different blockchains, enabling true multi-chain architectures. Expensive computations are automatically identified and routed to sidechain processing to minimise gas fees and maximise cost efficiency.</p>
+          </div>
+        </div>
+
+        <div class="workflow-step">
+          <div class="ws-num">5</div>
+          <div class="ws-content">
+            <div class="ws-tag">Preparation</div>
+            <h3>Prepare Trade Information &amp; Credentials</h3>
+            <p>Each participant prepares the information relevant to their role in the workflow — trade documents, certificates, credentials, payment authorisations — as JSON or structured text files. This is the only step that requires familiarity with file management. No blockchain wallets, no Solidity knowledge, no smart contract interaction syntax. DRAK's API abstracts all of that.</p>
+          </div>
+        </div>
+
+        <div class="workflow-step">
+          <div class="ws-num">6</div>
+          <div class="ws-content">
+            <div class="ws-tag">Execution</div>
+            <h3>Invoke the API to Run the Trade Workflow</h3>
+            <p>Call the generated REST API with the appropriate information to initiate and progress the transaction. DRAK's runtime manages all participant synchronisation, enforces ACID transaction properties across the entire multi-step workflow, enforces privacy constraints (each participant only accesses their relevant data), and handles any necessary sidechain interactions. If a mid-transaction disruption occurs, DRAK's repair capability (TABS+R) can amend the running contract and resume from a consistent state.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES DEEP-DIVE -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-tag">Core Capabilities</div>
+      <h2 class="section-title">The technology that makes DRAK uniquely capable</h2>
+      <p class="section-sub">Each capability addresses a hard problem that has blocked blockchain adoption in industrial settings.</p>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <div class="feature-title">Nested Multi-Step ACID Transactions</div>
+          <div class="feature-desc">Real-world trade spans many steps and many organisations. DRAK automatically generates transaction mechanisms that enforce atomicity, consistency, isolation, and durability across the entire multi-step workflow — including nested sub-transactions, each of which can be deployed independently on separate blockchain networks.</div>
+          <div class="feature-highlight">✓ Sub-transactions can abort and roll back independently without collapsing the entire workflow — matching the semantics of database savepoints.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <div class="feature-title">Blockchain-Independent Portability</div>
+          <div class="feature-desc">Unlike traditional smart contracts written in Solidity (Ethereum-only) or Golang chaincode (Hyperledger-only), DRAK's intermediate DE-HSM representation is platform-agnostic. The same business process model can generate contracts for multiple chains simultaneously. Methods can invoke other methods across different blockchain networks.</div>
+          <div class="feature-highlight">✓ No vendor lock-in. Switch or add blockchain platforms without touching your business process models.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🛠️</div>
+          <div class="feature-title">Live Contract Repair (TABS+R)</div>
+          <div class="feature-desc">When an external event prevents a running transaction from completing — a shipping route is unavailable, a regulatory change invalidates a payment path — DRAK identifies the innermost failing sub-transaction, allows the corresponding BPMN fragment to be amended, regenerates the affected contract portion, and resumes execution while preserving all successfully completed steps.</div>
+          <div class="feature-highlight">✓ No more "failed transaction = start over." DRAK preserves your completed work and finds an alternative path forward.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-title">Automated Privacy Enforcement</div>
+          <div class="feature-desc">In multi-party workflows, each participant must only see their relevant information. DRAK's generated contracts automatically compartmentalise participant data — a shipper cannot see payment amounts, a bank cannot see the detailed manufacturing specifications. Privacy rules are encoded directly into the contract logic, not managed by application-layer workarounds.</div>
+          <div class="feature-highlight">✓ Privacy-by-design: not a feature layer on top, but embedded in the generated contract structure.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <div class="feature-title">Regulatory Compliance Embedding</div>
+          <div class="feature-desc">DRAK can embed compliance constraints for GDPR, SOX, HIPAA, PCI DSS, and internal corporate policies directly into contract generation. Compliance rules are modelled once in DMN and applied consistently across every generated contract — making regulatory auditing straightforward and keeping contract logic in sync with changing requirements.</div>
+          <div class="feature-highlight">✓ Compliance adapts with your regulations: amend the DMN rule set, regenerate, deploy an updated contract.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">⬆️</div>
+          <div class="feature-title">Contract Upgradability</div>
+          <div class="feature-desc">Business processes evolve. DRAK supports controlled smart contract upgrades using proxy patterns and structured indirection — allowing bugs to be fixed and features to be added to deployed contracts without abandoning the existing transaction history. Combined with the repair capability, this gives DRAK the most complete contract lifecycle management of any BPMN-to-blockchain tool.</div>
+          <div class="feature-highlight">✓ Deploy once, evolve continuously — without writing new contracts from scratch.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💸</div>
+          <div class="feature-title">Sidechain Cost Optimisation</div>
+          <div class="feature-desc">DRAK automatically identifies computation-heavy operations in your generated contract — complex decision logic, aggregation, validation — and routes them to cheaper sidechain processing. The overhead cost difference is calculated automatically and the interaction protocol between main chain and sidechain is managed by the generated code, not by you.</div>
+          <div class="feature-highlight">✓ Same trust guarantees. Dramatically lower transaction fees for compute-intensive workflows.</div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔐</div>
+          <div class="feature-title">Security by Generation</div>
+          <div class="feature-desc">The most common smart contract vulnerabilities — reentrancy attacks, integer overflow, improper access control — arise from hand-written code. Because DRAK generates contract code algorithmically from a verified transformation process, these classes of bugs are structurally eliminated. Cryptographic method usage is standardised and automated, not left to developer discretion.</div>
+          <div class="feature-highlight">✓ Eliminate the human coding errors that have cost the DeFi ecosystem billions of dollars.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL FOUNDATIONS -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-tag">Academic Foundation</div>
+      <h2 class="section-title">Built on a decade of rigorous blockchain research</h2>
+      <p class="section-sub">DRAK is not a prototype. It is the commercialised product of a systematic research programme that has produced 12+ peer-reviewed publications across the leading venues in distributed systems and blockchain.</p>
+      <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="card" style="text-align:center;">
+          <div class="card-icon">📄</div>
+          <div class="card-title">2021 — FSM Foundations</div>
+          <div class="card-desc" style="font-size:.82rem;">ACM ICBCT &amp; BSCI: Off-chain computing patterns and sidechain tool. The algorithmic basis for DRAK's cost optimisation.</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon">📄</div>
+          <div class="card-title">2022 — DE-HSM Model</div>
+          <div class="card-desc" style="font-size:.82rem;">IEEE ICEET &amp; BCCA: Multi-modal BPMN transformation and long-term transaction support. The core engine of DRAK.</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon">📄</div>
+          <div class="card-title">2023 — TABS Published</div>
+          <div class="card-desc" style="font-size:.82rem;">Elsevier BCRA: Full TABS system published. Peer-validated transformation pipeline from BPMN to smart contract.</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon">📄</div>
+          <div class="card-title">2024 — TABS+ (Nested Tx)</div>
+          <div class="card-desc" style="font-size:.82rem;">ACM DLT Journal: Nested collaborative transactions with full ACID properties across multiple blockchain networks.</div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div class="card-icon">📄</div>
+          <div class="card-title">2025 — TABS+R (Repair)</div>
+          <div class="card-desc" style="font-size:.82rem;">IEEE VCC &amp; ICDCS: Live contract repair capability. Amend running contracts without losing completed transaction history.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h2>See DRAK in action with your own process</h2>
+    <p>Request a pilot and our team will model one of your existing business workflows and demonstrate a live deployment.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-primary">Request a Pilot →</a>
+      <a href="demo.html" class="btn btn-secondary">Try the Live Demo</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">DRAK</div>
+        <div class="footer-brand-desc">Powered by TABS+R research from Dalhousie University's Blockchain Lab. Smart contract automation for industrial and commercial workflows.</div>
+      </div>
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="product.html">How It Works</a>
+        <a href="use-cases.html">Use Cases</a>
+        <a href="demo.html">Try the Demo</a>
+        <a href="contact.html">Request a Pilot</a>
+      </div>
+      <div class="footer-col">
+        <h4>Research</h4>
+        <a href="../index.html">Exec Summary</a>
+        <a href="../exec-synopsis.html">Research Synopsis</a>
+        <a href="../pubs-research.html">Publications</a>
+        <a href="../people-pubs.html">Team</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="contact.html#pilot">Request a Pilot</a>
+        <a href="contact.html#download">Download Brochure</a>
+        <a href="https://blockchain.cs.dal.ca/">Blockchain Lab</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dalhousie Blockchain Lab · Dalhousie University &amp; Saint Mary's University</span>
+      <span>DRAK — Tool for Automated Transformation of BPMN Models into Smart Contracts (TABS+R)</span>
+    </div>
+  </footer>
+
+</body>
+</html>

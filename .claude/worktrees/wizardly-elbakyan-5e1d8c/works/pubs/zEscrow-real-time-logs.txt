@@ -1,0 +1,989 @@
+============================================================
+STATE TRANSITION #1
+------------------------------------------------------------
+new_state          : INIT
+next_new_state     : ["RcveAgr"]
+associatedDocument : Agreement Document
+timestamp          : 2026-04-19T15:06:29.629Z
+ipfsHash           : bafybei_agreementout_1776611189629
+
+input:
+N/A
+
+output:
+{
+  "fileName": "agreement.pdf",
+  "documentType": "Agreement",
+  "createdByState": [
+    "RcveAgr"
+  ],
+  "productId": "P410460088",
+  "timestamp": "2026-04-19T15:06:29.629Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #2
+------------------------------------------------------------
+new_state          : RcveAgr
+next_new_state     : ["RcveContract"]
+associatedDocument : Contract Document
+timestamp          : 2026-04-19T15:06:37.751Z
+ipfsHash           : bafybei_contractout_1776611197751
+
+input:
+{
+  "fileName": "agreement.pdf",
+  "documentType": "Agreement",
+  "createdByState": "RcveAgr",
+  "productId": "P410460088",
+  "timestamp": "2026-04-19T15:06:37.751Z"
+}
+
+output:
+{
+  "fileName": "contract.pdf",
+  "documentType": "Contract",
+  "createdByState": [
+    "RcveContract"
+  ],
+  "productId": "P410460088",
+  "timestamp": "2026-04-19T15:06:37.751Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #3
+------------------------------------------------------------
+new_state          : RcveContract
+next_new_state     : ["Gateway_0hurmdf"]
+associatedDocument : Contract Document
+timestamp          : 2026-04-19T15:06:45.471Z
+ipfsHash           : bafybei_contractin_1776611205471
+
+input:
+{
+  "fileName": "contract.pdf",
+  "documentType": "Contract",
+  "createdByState": "RcveContract",
+  "productId": "P410460088",
+  "timestamp": "2026-04-19T15:06:45.471Z"
+}
+
+output:
+N/A
+============================================================
+
+============================================================
+STATE TRANSITION #4
+------------------------------------------------------------
+new_state          : Gateway_0hurmdf
+next_new_state     : ["GPrcveDepBuyer", "GPrcveDepSeller"]
+associatedDocument : Deposit Review Confirmation
+timestamp          : 2026-04-19T15:06:52.979Z
+ipfsHash           : bafybei_reviewconfirm_1776611212979
+
+input:
+{
+  "requestType": "review_confirmation_request",
+  "task": "Gateway_0hurmdf",
+  "description": "Review and confirm contract for deposit handling",
+  "productId": "P410460088",
+  "timestamp": "2026-04-19T15:06:52.979Z"
+}
+
+output:
+{
+  "responseType": "review_confirmation_response",
+  "status": true,
+  "result": "confirmed",
+  "productId": "P410460088",
+  "timestamp": "2026-04-19T15:06:52.979Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #5
+------------------------------------------------------------
+new_state          : GPrcveDepBuyer
+next_new_state     : ["Gateway_1krz72f", "GPrcveDepSeller", "GPrcveDepSeller"]
+associatedDocument : Generic Document
+timestamp          : 2026-04-19T15:07:02.972Z
+ipfsHash           : bafybei_fallback_1776611222971
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GPrcveDepBuyer",
+  "fromState": null,
+  "event": "GPrcveDepBuyer",
+  "serviceType": "generic_payment",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:00.797Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GPrcveDepBuyer",
+  "productId": "P410460088",
+  "serviceType": "generic_payment",
+  "provider": "Generic Payment Provider",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "GEN-PAY-00001",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611222971",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "Gateway_1krz72f",
+    "GPrcveDepSeller",
+    "GPrcveDepSeller"
+  ],
+  "timestamp": "2026-04-19T15:07:02.972Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GPrcveDepBuyer",
+  "fromState": null,
+  "event": "GPrcveDepBuyer",
+  "serviceType": "generic_payment",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:00.797Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "processPayment",
+  "serviceType": "generic_payment",
+  "input": {
+    "task": "GPrcveDepBuyer",
+    "description": "Generic payment operation",
+    "invocationType": "Unknown",
+    "endpoint": "N/A",
+    "amount": 98,
+    "currency": "CAD",
+    "productId": "P410460088"
+  },
+  "timestamp": "2026-04-19T15:07:00.797Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "generic_payment",
+  "txHash": "0xgenericpayment0001",
+  "status": true,
+  "provider": "Generic Payment Provider",
+  "quotedPrice": null,
+  "paymentRef": "GEN-PAY-00001",
+  "amount": 98,
+  "currency": "CAD",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776611222971",
+  "documentName": "GPrcveDepBuyer_P410460088_payment.json",
+  "timestamp": "2026-04-19T15:07:02.971Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GPrcveDepBuyer",
+  "productId": "P410460088",
+  "serviceType": "generic_payment",
+  "provider": "Generic Payment Provider",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "GEN-PAY-00001",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611222971",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "Gateway_1krz72f",
+    "GPrcveDepSeller",
+    "GPrcveDepSeller"
+  ],
+  "timestamp": "2026-04-19T15:07:02.972Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #6
+------------------------------------------------------------
+new_state          : GPrcveDepSeller
+next_new_state     : ["Gateway_1krz72f", "Gateway_1krz72f", "Gateway_1krz72f"]
+associatedDocument : Generic Document
+timestamp          : 2026-04-19T15:07:07.022Z
+ipfsHash           : bafybei_fallback_1776611227022
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GPrcveDepSeller",
+  "fromState": null,
+  "event": "GPrcveDepSeller",
+  "serviceType": "generic_payment",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:04.872Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GPrcveDepSeller",
+  "productId": "P410460088",
+  "serviceType": "generic_payment",
+  "provider": "Generic Payment Provider",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "GEN-PAY-00001",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611227022",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "Gateway_1krz72f",
+    "Gateway_1krz72f",
+    "Gateway_1krz72f"
+  ],
+  "timestamp": "2026-04-19T15:07:07.022Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GPrcveDepSeller",
+  "fromState": null,
+  "event": "GPrcveDepSeller",
+  "serviceType": "generic_payment",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:04.872Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "processPayment",
+  "serviceType": "generic_payment",
+  "input": {
+    "task": "GPrcveDepSeller",
+    "description": "Generic payment operation",
+    "invocationType": "Unknown",
+    "endpoint": "N/A",
+    "amount": 98,
+    "currency": "CAD",
+    "productId": "P410460088"
+  },
+  "timestamp": "2026-04-19T15:07:04.872Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "generic_payment",
+  "txHash": "0xgenericpayment0001",
+  "status": true,
+  "provider": "Generic Payment Provider",
+  "quotedPrice": null,
+  "paymentRef": "GEN-PAY-00001",
+  "amount": 98,
+  "currency": "CAD",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776611227022",
+  "documentName": "GPrcveDepSeller_P410460088_payment.json",
+  "timestamp": "2026-04-19T15:07:07.022Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GPrcveDepSeller",
+  "productId": "P410460088",
+  "serviceType": "generic_payment",
+  "provider": "Generic Payment Provider",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "GEN-PAY-00001",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611227022",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "Gateway_1krz72f",
+    "Gateway_1krz72f",
+    "Gateway_1krz72f"
+  ],
+  "timestamp": "2026-04-19T15:07:07.022Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #7
+------------------------------------------------------------
+new_state          : Gateway_1krz72f
+next_new_state     : ["GetIns", "GetTransp"]
+associatedDocument : N/A
+timestamp          : 2026-04-19T15:07:08.803Z
+ipfsHash           : N/A
+
+input:
+N/A
+
+output:
+N/A
+============================================================
+
+============================================================
+STATE TRANSITION #8
+------------------------------------------------------------
+new_state          : GetIns
+next_new_state     : ["GPIns", "GetTransp", "GetTransp"]
+associatedDocument : Insurance Quote Document
+timestamp          : 2026-04-19T15:07:18.704Z
+ipfsHash           : bafybei_fallback_1776611238704
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GetIns",
+  "fromState": null,
+  "event": "GetIns",
+  "serviceType": "insurance",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:16.551Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GetIns",
+  "productId": "P410460088",
+  "serviceType": "insurance",
+  "provider": "ABC Insurance Ltd.",
+  "quotedPrice": 98,
+  "amount": null,
+  "paymentRef": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611238704",
+  "quoteNo": "INS-00001",
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "GPIns",
+    "GetTransp",
+    "GetTransp"
+  ],
+  "timestamp": "2026-04-19T15:07:18.704Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GetIns",
+  "fromState": null,
+  "event": "GetIns",
+  "serviceType": "insurance",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:16.551Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "requestQuoteDocument",
+  "serviceType": "insurance",
+  "input": {
+    "task": "GetIns",
+    "productId": "P410460088",
+    "maximumPrice": 100,
+    "requester": "SME",
+    "currency": "CAD"
+  },
+  "timestamp": "2026-04-19T15:07:16.551Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "insurance",
+  "txHash": "0xmockins00001",
+  "status": true,
+  "provider": "ABC Insurance Ltd.",
+  "quotedPrice": 98,
+  "paymentRef": null,
+  "amount": null,
+  "currency": "CAD",
+  "quoteNo": "INS-00001",
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776611238704",
+  "documentName": "GetIns_P410460088.json",
+  "timestamp": "2026-04-19T15:07:18.704Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GetIns",
+  "productId": "P410460088",
+  "serviceType": "insurance",
+  "provider": "ABC Insurance Ltd.",
+  "quotedPrice": 98,
+  "amount": null,
+  "paymentRef": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611238704",
+  "quoteNo": "INS-00001",
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "GPIns",
+    "GetTransp",
+    "GetTransp"
+  ],
+  "timestamp": "2026-04-19T15:07:18.704Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #9
+------------------------------------------------------------
+new_state          : GPIns
+next_new_state     : ["Gateway_032gs2n", "DoTransp", "DoTransp"]
+associatedDocument : Insurance Payment Instruction
+timestamp          : 2026-04-19T15:07:36.759Z
+ipfsHash           : bafybei_fallback_1776611256759
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GPIns",
+  "fromState": null,
+  "event": "GPIns",
+  "serviceType": "insurance",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:34.604Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GPIns",
+  "productId": "P410460088",
+  "serviceType": "insurance",
+  "provider": "USDXCrypto-StCn",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "PAY-INS-00001",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611256759",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "Gateway_032gs2n",
+    "DoTransp",
+    "DoTransp"
+  ],
+  "timestamp": "2026-04-19T15:07:36.759Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GPIns",
+  "fromState": null,
+  "event": "GPIns",
+  "serviceType": "insurance",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:34.604Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "processPayment",
+  "serviceType": "insurance_payment",
+  "input": {
+    "task": "GPIns",
+    "description": "Pay insurance premium (payable)",
+    "invocationType": "Cross-chain",
+    "endpoint": "0xB7d2...4E1A @ USDXCrypto-StCn (ChainID 4200)",
+    "amount": 98,
+    "currency": "CAD",
+    "productId": "P410460088"
+  },
+  "timestamp": "2026-04-19T15:07:34.604Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "insurance",
+  "txHash": "0xpayins00001",
+  "status": true,
+  "provider": "USDXCrypto-StCn",
+  "quotedPrice": null,
+  "paymentRef": "PAY-INS-00001",
+  "amount": 98,
+  "currency": "CAD",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776611256759",
+  "documentName": "GPIns_P410460088_payment.json",
+  "timestamp": "2026-04-19T15:07:36.759Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GPIns",
+  "productId": "P410460088",
+  "serviceType": "insurance",
+  "provider": "USDXCrypto-StCn",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "PAY-INS-00001",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611256759",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "Gateway_032gs2n",
+    "DoTransp",
+    "DoTransp"
+  ],
+  "timestamp": "2026-04-19T15:07:36.759Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #10
+------------------------------------------------------------
+new_state          : GetTransp
+next_new_state     : ["Gateway_032gs2n", "GPIns", "GPIns"]
+associatedDocument : Transportation Quote Document
+timestamp          : 2026-04-19T15:07:21.901Z
+ipfsHash           : bafybei_fallback_1776611241901
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GetTransp",
+  "fromState": null,
+  "event": "GetTransp",
+  "serviceType": "transport",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:19.750Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GetTransp",
+  "productId": "P410460088",
+  "serviceType": "transport",
+  "provider": "FastTransport Inc.",
+  "quotedPrice": 98,
+  "amount": null,
+  "paymentRef": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611241901",
+  "quoteNo": "TRN-00001",
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "Gateway_032gs2n",
+    "GPIns",
+    "GPIns"
+  ],
+  "timestamp": "2026-04-19T15:07:21.901Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GetTransp",
+  "fromState": null,
+  "event": "GetTransp",
+  "serviceType": "transport",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:19.750Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "requestQuoteDocument",
+  "serviceType": "transport",
+  "input": {
+    "task": "GetTransp",
+    "productId": "P410460088",
+    "maximumPrice": 100,
+    "requester": "SME",
+    "currency": "CAD"
+  },
+  "timestamp": "2026-04-19T15:07:19.750Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "transport",
+  "txHash": "0xmocktrn00001",
+  "status": true,
+  "provider": "FastTransport Inc.",
+  "quotedPrice": 98,
+  "paymentRef": null,
+  "amount": null,
+  "currency": "CAD",
+  "quoteNo": "TRN-00001",
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776611241901",
+  "documentName": "GetTransp_P410460088.json",
+  "timestamp": "2026-04-19T15:07:21.901Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GetTransp",
+  "productId": "P410460088",
+  "serviceType": "transport",
+  "provider": "FastTransport Inc.",
+  "quotedPrice": 98,
+  "amount": null,
+  "paymentRef": null,
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611241901",
+  "quoteNo": "TRN-00001",
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "Gateway_032gs2n",
+    "GPIns",
+    "GPIns"
+  ],
+  "timestamp": "2026-04-19T15:07:21.901Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #11
+------------------------------------------------------------
+new_state          : Gateway_032gs2n
+next_new_state     : ["GPTransp", "GPIns", "GPIns"]
+associatedDocument : N/A
+timestamp          : 2026-04-19T15:07:23.955Z
+ipfsHash           : N/A
+
+input:
+N/A
+
+output:
+N/A
+============================================================
+
+============================================================
+STATE TRANSITION #12
+------------------------------------------------------------
+new_state          : GPTransp
+next_new_state     : ["DoTransp", "GPIns", "GPIns"]
+associatedDocument : Transport Payment Instruction
+timestamp          : 2026-04-19T15:07:32.705Z
+ipfsHash           : bafybei_fallback_1776611252705
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GPTransp",
+  "fromState": null,
+  "event": "GPTransp",
+  "serviceType": "transport",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:30.556Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GPTransp",
+  "productId": "P410460088",
+  "serviceType": "transport",
+  "provider": "bankpay-api.example.com",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "PAY-TRN-00001",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611252705",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "DoTransp",
+    "GPIns",
+    "GPIns"
+  ],
+  "timestamp": "2026-04-19T15:07:32.705Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GPTransp",
+  "fromState": null,
+  "event": "GPTransp",
+  "serviceType": "transport",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:30.556Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "processPayment",
+  "serviceType": "transport_payment",
+  "input": {
+    "task": "GPTransp",
+    "description": "Pay transport provider (payable)",
+    "invocationType": "Cross-chain",
+    "endpoint": "https://bankpay-api.example.com/v1/transfer",
+    "amount": 98,
+    "currency": "CAD",
+    "productId": "P410460088"
+  },
+  "timestamp": "2026-04-19T15:07:30.556Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "transport",
+  "txHash": "0xpaytrn00001",
+  "status": true,
+  "provider": "bankpay-api.example.com",
+  "quotedPrice": null,
+  "paymentRef": "PAY-TRN-00001",
+  "amount": 98,
+  "currency": "CAD",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776611252705",
+  "documentName": "GPTransp_P410460088_payment.json",
+  "timestamp": "2026-04-19T15:07:32.705Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GPTransp",
+  "productId": "P410460088",
+  "serviceType": "transport",
+  "provider": "bankpay-api.example.com",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "PAY-TRN-00001",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611252705",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "DoTransp",
+    "GPIns",
+    "GPIns"
+  ],
+  "timestamp": "2026-04-19T15:07:32.705Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #13
+------------------------------------------------------------
+new_state          : DoTransp
+next_new_state     : ["GPrcvePmnt", "Gateway_032gs2n", "Gateway_032gs2n"]
+associatedDocument : N/A
+timestamp          : 2026-04-19T15:07:39.307Z
+ipfsHash           : N/A
+
+input:
+N/A
+
+output:
+N/A
+============================================================
+
+============================================================
+STATE TRANSITION #14
+------------------------------------------------------------
+new_state          : GPrcvePmnt
+next_new_state     : ["SUCCESS", "Gateway_032gs2n", "Gateway_032gs2n"]
+associatedDocument : Product Payment Receipt
+timestamp          : 2026-04-19T15:07:49.857Z
+ipfsHash           : bafybei_fallback_1776611269857
+
+input:
+{
+  "requestType": "task_request",
+  "task": "GPrcvePmnt",
+  "fromState": null,
+  "event": "GPrcvePmnt",
+  "serviceType": "receive_payment",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:47.709Z"
+}
+
+output:
+{
+  "responseType": "task_response",
+  "task": "GPrcvePmnt",
+  "productId": "P410460088",
+  "serviceType": "receive_payment",
+  "provider": "MainChain",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "RCV-PMNT-00001",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611269857",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "SUCCESS",
+    "Gateway_032gs2n",
+    "Gateway_032gs2n"
+  ],
+  "timestamp": "2026-04-19T15:07:49.857Z"
+}
+
+[DETAIL FLOW]
+taskRequest:
+{
+  "requestType": "task_request",
+  "task": "GPrcvePmnt",
+  "fromState": null,
+  "event": "GPrcvePmnt",
+  "serviceType": "receive_payment",
+  "productId": "P410460088",
+  "maximumPrice": 100,
+  "requester": "SME",
+  "currency": "CAD",
+  "timestamp": "2026-04-19T15:07:47.709Z"
+}
+
+helperRequest:
+{
+  "requestType": "helper_contract_request",
+  "fn": "processPayment",
+  "serviceType": "receive_payment",
+  "input": {
+    "task": "GPrcvePmnt",
+    "description": "Receive product payment from buyer (receivable)",
+    "invocationType": "On-chain",
+    "endpoint": "0xC9e4...7F3D @ MainChain (ChainID 1)",
+    "amount": 98,
+    "currency": "CAD",
+    "productId": "P410460088"
+  },
+  "timestamp": "2026-04-19T15:07:47.709Z"
+}
+
+helperResponse:
+{
+  "responseType": "helper_contract_response",
+  "serviceType": "receive_payment",
+  "txHash": "0xrcvpmnt00001",
+  "status": true,
+  "provider": "MainChain",
+  "quotedPrice": null,
+  "paymentRef": "RCV-PMNT-00001",
+  "amount": 98,
+  "currency": "CAD",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "ipfsHash": "bafybei_fallback_1776611269857",
+  "documentName": "GPrcvePmnt_P410460088_payment.json",
+  "timestamp": "2026-04-19T15:07:49.857Z"
+}
+
+taskResponse:
+{
+  "responseType": "task_response",
+  "task": "GPrcvePmnt",
+  "productId": "P410460088",
+  "serviceType": "receive_payment",
+  "provider": "MainChain",
+  "quotedPrice": null,
+  "amount": 98,
+  "paymentRef": "RCV-PMNT-00001",
+  "currency": "CAD",
+  "ipfsHash": "bafybei_fallback_1776611269857",
+  "quoteNo": null,
+  "validUntil": "2026-12-31",
+  "nextState": [
+    "SUCCESS",
+    "Gateway_032gs2n",
+    "Gateway_032gs2n"
+  ],
+  "timestamp": "2026-04-19T15:07:49.857Z"
+}
+============================================================
+
+============================================================
+STATE TRANSITION #15
+------------------------------------------------------------
+new_state          : SUCCESS
+next_new_state     : ["Gateway_032gs2n", "Gateway_032gs2n"]
+associatedDocument : N/A
+timestamp          : 2026-04-19T15:08:01.205Z
+ipfsHash           : N/A
+
+input:
+N/A
+
+output:
+N/A
+============================================================

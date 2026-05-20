@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /d D:\\\\projects\\\\blockchain-lab\\\\project-blockchain)",
+      "Bash(Get-ChildItem -Recurse -Force)",
+      "Bash(Select-Object -First 100)",
+      "Bash(Format-Table -Property FullName)",
+      "Bash(ls -la \"D:\\\\projects\\\\blockchain-lab\\\\project-blockchain\")",
+      "Bash(Get-ChildItem -Recurse -Depth 3 \"D:\\\\projects\\\\blockchain-lab\\\\project-blockchain\\\\.claude\\\\worktrees\\\\wizardly-elbakyan-5e1d8c\")",
+      "Bash(Select-Object FullName)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(ls \"D:\\\\projects\\\\blockchain-lab\\\\project-blockchain\\\\\" | head -20)",
+      "Bash(ls /mnt/d/projects/blockchain-lab/project-blockchain/)"
+    ]
+  }
+}

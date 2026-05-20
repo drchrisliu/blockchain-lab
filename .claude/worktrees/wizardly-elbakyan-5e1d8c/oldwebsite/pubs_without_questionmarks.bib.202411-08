@@ -1,0 +1,143 @@
+@inproceedings{10.1145/3460537.3460565,
+  author    = {Bodorik, Peter and G. Liu, Christian and Julta, Dawn},
+  title     = {Using FSMs to Find Patterns for Off-Chain Computing: Finding Patterns for Off-Chain Computing with FSMs},
+  year      = {2021},
+  isbn      = {9781450389624},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3460537.3460565},
+  doi       = {10.1145/3460537.3460565},
+  abstract  = {One of the problems arising in using blockchains is their size-constraints regarding performance. This paper proposes a new algorithm for blockchain software developers and architects to use for determining what computations of a smart contract can be effectively done off-chain without loss of trust. Our algorithm uses FSMs or HSMs in order to create smart contract patterns using graphs and then uses pattern recognition to identify which parts of the smart contracts should be considered for moving off-chain. The pattern recognition property used is that once software execution transits into the pattern's entry state, off-chain execution continues until the execution transits into the pattern's exit state, when execution continues on-chain. The software developer reviews each pattern together with information, such as anticipated overhead cost due to off-chain execution, and she is provided with guidance on decision making whether to execute the smart contract pattern under consideration off-chain. Expert software developer inspection, in the context of a Trade Finance use case, validates that our algorithm finds optimal patterns for moving computations off-chain and improve blockchain software performance.},
+  booktitle = {2021 The 3rd ACM International Conference on Blockchain Technology},
+  pages     = {28–34},
+  numpages  = {7},
+  keywords  = {FSM and HSM modeling, Blockchain developer productivity, Smart contract, Off-chain computation, Blockchain},
+  location  = {Shanghai, China},
+  series    = {ICBCT '21}
+}
+
+
+
+@inproceedings{10.1145/3457337.3457848,
+  author    = {Liu, Christian and Bodorik, Peter and Jutla, Dawn},
+  title     = {A Tool for Moving Blockchain Computations Off-Chain},
+  year      = {2021},
+  isbn      = {9781450384001},
+  address   = {New York, NY, USA},
+  url       = {https://doi.org/10.1145/3457337.3457848},
+  doi       = {10.1145/3457337.3457848},
+  abstract  = {This paper proposes a new approach and tool for blockchain software developers and architects to use for determining which computations of a smart contract can be effectively done off-chain without loss of trust and how they can be moved off-chain automatically. Our approach uses Finite State Machines (FSMs) and Hierarchical State Machines (HSMs) modeling in order to create smart contract patterns using graphs and then use pattern properties to identify which parts of the smart contracts should be considered for moving off-chain. Once software execution transits into the pattern's entry state, off-chain execution continues until the execution transits into the pattern's exit state, when execution continues on-chain. This paper further describes a tool for (1) FSM input and visualization, its analysis, and automatic transformation into a smart contract, and (2) an interface to support the developers' decision to optimally off-chain computations and to (3) define the communications between on-chain and off-chain computations.},
+  booktitle = {Proceedings of the 3rd ACM International Symposium on Blockchain and Secure Critical Infrastructure},
+  pages     = {103–109},
+  numpages  = {7},
+  keywords  = {hierarchical state machine, blockchain, HSM, simple-graph, off-chain computation, transformation of FSM to smart contract, smart contract, FSM model},
+  location  = {Virtual Event, Hong Kong},
+  series    = {BSCI '21},
+  note      = {Acceptance Rate: 36.7%.}
+}
+
+@inproceedings{liu_automating_2021,
+  title        = {Automating Smart Contract Generation on Blockchains Using Multi-modal Modeling},
+  volume       = {13, No. 3},
+  issn         = {1798-2340},
+  url          = {http://www.jait.us/index.php?m=content&c=index&a=show&catid=217&id=1219},
+  doi          = {10.12720/jait.13.3.213-223},
+  abstract     = {The power and correctness of smart contracts have been the focus of much research. We propose a new approach for developing smart contracts that uses multi-modal modeling to represent the application logic for the trade domain. We use discrete events modeling for concurrency combined with {FSM} modeling to use concurrent {FSMs} to not only simplify the design process for the modeler, but also to scale the application running on a blockchain and facilitate identifying parts of a smart program that are suitable for off-chain processing on a sidechain that also provides privacy. In addition, we achieve separation of concerns between (a) application logic and (b) its transformation into a smart contract and deployment on a blockchain with processing of selected patterns on private sidechains. We transform the model into a smart contract automatically, such that patterns, selected by the modeler, are deployed on a sidechain. The interface for the mainchain to sidechain interaction is also prepared and deployed automatically.},
+  pages        = {213--223},
+  journaltitle = {10.12720/jait},
+  shortjournal = {{JAIT} is a scientific open access journal which focuses on empirical research results and critical analysis of technology development, use, management and impacts in information technology.},
+  booktitle    = {Journal of Advances in Information Technology (JAIT)},
+  author       = {Liu, C. G. and Bodorik, P. and Jutla, D.},
+  year         = {2022},
+  note         = {Acceptance Rate: 5%, CiteScore: 4.2.}
+}
+
+
+
+@inproceedings{9659771,
+  author       = {Liu, Chris and Bodorik, Peter and Jutla, Dawn},
+  booktitle    = {2021 IEEE International Conference on Engineering and Emerging Technologies (ICEET)},
+  title        = {From BPMN to smart contracts on blockchains: Transforming BPMN to DE-HSM multi-modal model},
+  year         = {2021},
+  volume       = {},
+  number       = {},
+  pages        = {1-7},
+  abstract     = {Scalability, privacy, and interoperability are some of the major issues receiving attention in research on blockchain technologies. We concentrate on the trade finance vertical for which we develop a new modeling approach with the objective of automatic transformation of an application, represented using Business Process Model and Notation (BPMN), into a smart contract deployed on a blockchain. Here, we describe how the BPMN model is transformed into a multimodal model that combines DE-HSM modeling. We provide a high-level overview of the method and review how BPMN categories of elements are transformed into a multi-modal DE-HSM model. We also describe briefly how the DE-FMS model is automatically transformed into deployable smart contracts that interact to form a distributed application: The smart contract deployed on the main blockchain coordinates activities amongst the business partners and interoperates with smart contracts, also automatically prepared and deployed on a sidechain(s), with one smart contract per individual business partner. Privacy is obtained by performing activities, which are not germane to the collaboration with the other business partners but deal with the private activities of the individual business partner, in a smart contract deployed and executed on a side chain. We thus provide for interoperability of smart contracts and privacy as private activities of a business partner are performed in a smart contract on a private sidechain.},
+  keywords     = {},
+  doi          = {10.1109/ICEET53442.2021.9659771},
+  issn         = {2409-2983},
+  month        = {Oct},
+  url_paper    = {https://ieeexplore.ieee.org/document/9659771},
+  url_download = {https://web.cs.dal.ca/~gang/ICEET/},
+  paper        = {https://ieeexplore.ieee.org/document/9659771},
+  note         = {Acceptance Rate: 30%.}
+}
+
+@inproceedings{BODORIK2022100115,
+  title        = {TABS: Transforming automatically BPMN models into blockchain smart contracts},
+  journal      = {Elsevier Journal of Blockchain: Research and Applications},
+  booktitle    = {Elsevier Journal of Blockchain: Research and Applications},
+  volume       = {4, 100115},
+  number       = {1},
+  pages        = {1-26},
+  year         = {2023},
+  issn         = {2096-7209},
+  doi          = {https://doi.org/10.1016/j.bcra.2022.100115},
+  url_paper    = {https://www.sciencedirect.com/science/article/pii/S2096720922000562},
+  url_download = {https://www.sciencedirect.com/science/article/pii/S2096720922000562},
+  paper        = {https://www.sciencedirect.com/science/article/pii/S2096720922000562},
+  author       = {Bodorik, P. and Liu, C. G. and B Jutla, D.},
+  keywords     = {Blockchain, Business processes modeling notation (BPMN), Discrete event (DE) modeling, Finite state machine (FSM), Hierarchical state machines (HSM), Smart contract, Off-chain computation, Privacy, Smart contract interoperability},
+  abstract     = {Research on blockchains addresses multiple issues, with one being automated creation of smart contracts. Developing smart contract methods is more difficult than mainstream software development as the underlying blockchain infrastructure poses additional complexity. We report on a new approach to develop smart contracts with the objective to automate the process to increase developer efficiency and reduce risks of errors introduced by software developers. To support industry adoption, we use Business Process Model and Notation (BPMN) modeling to describe an application while targeting applications in the trade vertical. We describe a system that transforms a BPMN model into a multi-modal model that combines Discrete Event (DE) modeling for concurrency with Hierarchical State Machines (HSMs) to represent application functionality. Then, further transformations are used to transform the DE-HSM model into methods in smart contracts. The system lets the modeler decide which of the independent patterns should be transformed into methods of a separate smart contract that is deployed on a sidechain for the purpose of (i) reducing processing costs and/or (ii) providing privacy so that other participants in the smart contract do not have visibility into processing of the pattern. We also briefly describe a proof-of-concept tool we built to demonstrate the feasibility of our approach.},
+  note         = {Impact Factor: 5.6, CiteScore: 11.3.}
+}
+
+
+@inproceedings{9922193,
+  author       = {Liu, Christian Gang and Bodorik, Peter and Jutla, Dawn},
+  booktitle    = {2022 ACM Fourth International Conference on Blockchain Computing and Applications (BCCA)},
+  title        = {Supporting Long-term Transactions in Smart Contracts},
+  year         = {2022},
+  pages        = {11-19},
+  volume       = {},
+  number       = {},
+  doi          = {10.1109/BCCA55292.2022.9922193},
+  url_paper    = {https://ieeexplore.ieee.org/document/9922193},
+  url_download = {https://web.cs.dal.ca/~gang/BCCA/},
+  paper        = {https://ieeexplore.ieee.org/document/9922193},
+  note         = {Acceptance Rate: 18.89%.}
+}
+
+@inproceedings{liu2023longterm,
+  title     = {Long-Term Blockchain Transactions Spanning Multiplicity of Smart Contract Methods},
+  author    = {Liu, C. G. and Bodorik, P. and Jutla, D.},
+  booktitle = {Springer BlockSys: Blockchain and Trustworthy Systems},
+  year      = {2023},
+  pages     = {141-155},
+  doi       = {https://doi.org/10.1007/978-981-99-8104-5},
+  isbn      = {978-981-99-8103-8},
+  eisbn     = {978-981-99-8104-5},
+  note      = {Acceptance Rate: 27.8%.}
+}
+
+@inproceedings{author2024b,
+  title     = {Transforming Automatically BPMN Models to Smart Contracts with Repair/Upgrade (TABS+R) [Manuscript submitted for publication]},
+  journal   = {Elsevier Journal of Blockchain: Research and Applications},
+  booktitle = {Elsevier Journal of Blockchain: Research and Applications},
+  year      = {2024},
+  author    = {Liu, C. G. and Bodorik, P. and Jutla, D.},
+  keywords  = {Transactions, Blockchain, Smart Contracts, Trade of Goods and Services, Trade Transactions, Transactional Properties, Privacy, Transaction Mechanism, Recovery Procedures},
+  abstract  = {Research on blockchains addresses challenges in developing smart contracts, especially for applications involving multiple actors and complex processes. Blockchain's constraints make creating these contracts difficult, particularly for long-term, multi-step trade activities. Although trade activities can be represented as smart-contract methods, blockchains lack adequate multi-actor transaction support. This paper reviews trade activity requirements and proposes an automated mechanism to generate smart contracts from Business Process Model and Notation (BPMN) models. It discusses modeling blockchain application requirements using BPMN and transforming these models into smart contracts for nested trade transactions. Real-life trade activities often require adjustments, necessitating smart contract repairs. We present a methodology for repairing contracts generated from BPMN transformations. Incomplete trade activities due to unexpected events trigger alternative arrangements in smart contracts. The repair process starts with the original BPMN model fragment, providing a modeler with the innermost transaction fragment containing the failed activity. The modeler amends the BPMN pattern based on successful previous activities. If repairs exceed the inner transaction’s scope, they are addressed using the parent transaction's BPMN model. The amended BPMN model is then transformed into new smart contracts, ensuring consistent logic and data transitions. Our approach to transaction repair is demonstrated in generating smart contracts from BPMN models. Previously, we developed TABS+ as a Proof of Concept to transform BPMN models into smart contracts for nested transactions. This paper also discusses enhancing TABS+ to TABS+R, which supports transaction repairs.},
+  note      = {Impact Factor: 5.6, CiteScore: 11.3.}
+}
+
+@inproceedings{author2024c,
+  title        = {Transforming Automatically BPMN Models to Smart Contracts with Nested Collaborative Transactions (TABS+)},
+  journal      = {ACM Journal Distributed Ledger Technologies: Research and Practice},
+  booktitle    = {ACM Journal Distributed Ledger Technologies: Research and Practice},
+  year         = {2024},
+  author       = {Liu, C. G. and Bodorik, P. and Jutla, D.},
+  doi          = {https://doi.org/10.1145/3654802},
+  url_paper    = {https://doi.org/10.1145/3654802},
+  paper        = {https://doi.org/10.1145/3654802},
+  url_download = {https://blockchain.cs.dal.ca/works/9%20ACM%20DLT%2023%20BPMNtoSC-ACM-DLT-submitted.pdf}
+}
