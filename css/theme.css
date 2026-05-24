@@ -1,0 +1,887 @@
+/* ================================================================
+   Dalhousie Blockchain Lab – 水墨 Ink Wash Theme
+   Traditional Chinese ink painting aesthetic:
+   rice-paper ground · deep ink header · vermillion 朱砂 accents
+   Replaces: styles-0.css through styles-5.css
+   ================================================================ */
+
+/* --- Google Fonts: calligraphic serif + clean sans --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ----------------------------------------------------------------
+   Design Tokens  水墨调色板
+---------------------------------------------------------------- */
+:root {
+  /* 墨 Ink tones */
+  --navy:          #1a1209;   /* 焦墨 — deep burnt ink      */
+  --navy-mid:      #362515;   /* 浓墨 — strong ink          */
+  --navy-light:    #5c3d20;   /* 淡墨 — diluted ink         */
+
+  /* 朱砂 Vermillion accent (replaces gold as the primary accent) */
+  --gold:          #c41230;
+  --gold-light:    #ee3a52;
+
+  /* 墨绿 Ink green */
+  --teal:          #2a6040;
+  --teal-light:    #3a8060;
+
+  /* 宣纸 Rice-paper surfaces */
+  --bg:            #f0ead8;   /* 宣纸 — rice paper          */
+  --bg-card:       #faf6ef;   /* 白宣 — white rice paper    */
+  --bg-sidebar:    #e8e0cc;   /* 米色 — cream               */
+
+  /* 字墨 Text ink */
+  --text:          #1e160a;
+  --text-mid:      #3e2e1c;
+  --text-muted:    #7a6650;
+
+  /* 边线 Borders & accents */
+  --red:           #c41230;
+  --border:        #c4b89a;
+  --border-light:  #d8cebc;
+
+  /* Typography */
+  --font-head:     'Noto Serif', 'STSong', 'SimSun', Georgia, serif;
+  --font-body:     'Noto Sans',  'STHeiti', 'SimHei', system-ui, sans-serif;
+
+  /* Layout */
+  --header-h:      96px;
+  --nav-h:         42px;
+  --offset:        calc(var(--header-h) + var(--nav-h));
+  --max-w:         1200px;
+  --pad:           32px;
+
+  /* Effects — flatter, paper-like; less rounding = more traditional */
+  --radius:        2px;
+  --radius-sm:     1px;
+  --shadow-xs:     0 1px 4px rgba(26,18,9,.10), 0 1px 2px rgba(26,18,9,.05);
+  --shadow-sm:     0 3px 10px rgba(26,18,9,.12), 0 1px 4px rgba(26,18,9,.07);
+  --shadow-md:     0 6px 22px rgba(26,18,9,.16), 0 2px 8px rgba(26,18,9,.09);
+  --trans:         0.18s ease;
+}
+
+/* ----------------------------------------------------------------
+   Base Reset
+---------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a {
+  color: var(--navy-light);
+  text-decoration: none;
+  transition: color var(--trans);
+}
+a:hover { color: var(--gold); text-decoration: underline; }
+
+strong { font-weight: 600; }
+
+/* ----------------------------------------------------------------
+   Fixed Header  — 焦墨 / deep burnt ink
+---------------------------------------------------------------- */
+.header-0 {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: var(--header-h);
+  background: linear-gradient(105deg, #1a1209 0%, #2d1a0e 60%, #1a1209 100%);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 18px rgba(0,0,0,.40);
+  padding: 0 28px;
+  border-bottom: 2px solid var(--gold);   /* 朱砂 vermillion line */
+}
+
+.header-left-0 {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 22px;
+  border-right: 1px solid rgba(196,18,48,.30);  /* vermillion separator */
+  margin-right: 22px;
+}
+
+.header-left-0 img {
+  height: 62px;
+  width: auto;
+  object-fit: contain;
+  /* Rice-paper mount: keeps logo legible on the dark ink header */
+  background: rgba(250, 244, 232, 0.92);
+  padding: 5px 9px;
+  border-radius: 2px;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.45));
+}
+
+.header-right-0 {
+  flex: 1;
+  text-align: left;
+  line-height: 1.38;
+}
+
+.header-right-0 h1 {
+  margin: 0 0 2px 0;
+  font-family: var(--font-head);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #f5ede0;        /* warm parchment white */
+  letter-spacing: .04em;
+}
+
+.header-right-0 h2 {
+  margin: 0 0 2px 0;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 400;
+  color: #e8c0a0;        /* warm ochre */
+  letter-spacing: .01em;
+}
+
+.header-right-0 h3 {
+  margin: 0;
+  font-size: .76rem;
+  font-weight: 300;
+  color: rgba(240,220,190,.60);
+  letter-spacing: .01em;
+}
+
+/* "SCaaS" accent — bright vermillion, like a seal stamp */
+.red-0 { color: #ff6870; font-weight: 700; }
+
+/* ----------------------------------------------------------------
+   Fixed Navigation  — 浓墨 strong ink bar
+---------------------------------------------------------------- */
+.menu-0 {
+  position: fixed;
+  top: var(--header-h);
+  left: 0;
+  width: 100%;
+  height: var(--nav-h);
+  background-color: #2d1a0e;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,.22);
+}
+
+.menu-0 ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.menu-0 li { margin: 0; }
+
+.menu-0 a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 15px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: rgba(240,220,190,.72);
+  text-decoration: none;
+  position: relative;
+  transition: color var(--trans), background-color var(--trans);
+}
+
+/* 朱砂 underline on hover / active */
+.menu-0 a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%; right: 50%;
+  height: 2px;
+  background: var(--gold);
+  transition: left var(--trans), right var(--trans);
+}
+
+.menu-0 a:hover,
+.menu-0 a.active-0 {
+  background-color: rgba(196,18,48,.12);
+  color: #f5ede0;
+  text-decoration: none;
+}
+
+.menu-0 a:hover::after,
+.menu-0 a.active-0::after {
+  left: 8px; right: 8px;
+}
+
+/* ----------------------------------------------------------------
+   Page Containers
+---------------------------------------------------------------- */
+.page-1,
+.page-2,
+.page-3,
+.page-4,
+.page-5 {
+  margin-top: calc(var(--offset) + 16px);
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--pad) var(--pad) 56px;
+  max-width: var(--max-w);
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------
+   Page Titles
+---------------------------------------------------------------- */
+.page-title-2,
+.page-title-3,
+.page-title-4 {
+  font-family: var(--font-head);
+  font-size: 1.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  margin: 4px 0 28px;
+  padding-bottom: 16px;
+  letter-spacing: .02em;
+  /* brush-stroke underline — fades at edges */
+  border-bottom: none;
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--border) 15%,
+    var(--border) 85%,
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 1px;
+}
+
+/* ----------------------------------------------------------------
+   Section Dividers  — brush-stroke fade
+---------------------------------------------------------------- */
+.divider-1,
+.divider-2,
+.divider-3,
+.divider-4 {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--border) 12%,
+    var(--border) 88%,
+    transparent 100%
+  );
+  margin: 28px 0;
+}
+
+/* ----------------------------------------------------------------
+   Section Headings
+---------------------------------------------------------------- */
+h2.major-heading-3,
+h2.major-heading-4,
+h2.title-2 {
+  font-family: var(--font-head);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 14px;
+  padding: 9px 14px;
+  border-left: 4px solid var(--gold);   /* 朱砂 vermillion rule */
+  background: linear-gradient(90deg, rgba(196,18,48,.05) 0%, transparent 55%);
+  border-radius: 0;                     /* flat, no rounding */
+}
+
+h3.minor-heading-4 {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--navy-mid);
+  margin: 20px 0 10px;
+  padding-left: 10px;
+  border-left: 3px solid var(--teal);
+}
+
+/* Exec-synopsis container headings */
+.title-2 {
+  font-family: var(--font-head);
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border-left: 4px solid var(--gold);
+  background: linear-gradient(90deg, rgba(196,18,48,.05) 0%, transparent 55%);
+  border-radius: 0;
+}
+
+/* ----------------------------------------------------------------
+   Intro Paragraph
+---------------------------------------------------------------- */
+.ptext-3,
+.intro-4 {
+  font-size: .97rem;
+  line-height: 1.80;
+  color: var(--text-mid);
+  margin: 0 0 20px;
+}
+
+/* ----------------------------------------------------------------
+   People Cards  (index.html)
+---------------------------------------------------------------- */
+.people-container-1 {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.person-1 {
+  flex: 1 1 260px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--trans), transform var(--trans);
+}
+
+.person-1:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.person-img-1 { flex-shrink: 0; }
+
+.person-img-1 img {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);   /* 朱砂 ring */
+}
+
+.person-info-1 p {
+  margin: 0;
+  line-height: 1.45;
+  font-size: .86rem;
+  color: var(--text-mid);
+}
+
+.person-info-1 p:first-child {
+  font-size: .97rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ----------------------------------------------------------------
+   Problem / Solution split  (index.html)
+---------------------------------------------------------------- */
+.problem-solution-1 {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.problem-solution-1 .left-1  { flex: 0 0 55%; }
+.problem-solution-1 .right-1 { flex: 1; }
+.problem-solution-1 .right-1 img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ----------------------------------------------------------------
+   Benefits / Notes split  (index.html)
+---------------------------------------------------------------- */
+.benefits-notes-1 {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.benefits-notes-1 .left-1  { flex: 0 0 55%; }
+.benefits-notes-1 .right-1 { flex: 1; }
+
+/* ----------------------------------------------------------------
+   Content Sections  (exec-synopsis.html)
+---------------------------------------------------------------- */
+.container-2 {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin-bottom: 6px;
+  box-shadow: var(--shadow-xs);
+}
+
+.container-split-2 {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.left-2  { flex: 0 0 60%; }
+.right-2 { flex: 1; display: flex; align-items: center; justify-content: center; }
+
+.right-2 img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* ----------------------------------------------------------------
+   Publication Lists  (pubs-research.html)
+---------------------------------------------------------------- */
+.pub-list-4 {
+  list-style: none;
+  padding: 0; margin: 0 0 18px;
+}
+
+.pub-list-4 > li {
+  background: var(--bg-card);
+  border-left: 3px solid var(--teal);
+  border-radius: 0;
+  padding: 13px 16px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--trans);
+}
+
+.pub-list-4 > li:hover { box-shadow: var(--shadow-sm); }
+
+.pub-list-horizontal-4 {
+  list-style: none;
+  padding: 0; margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pub-list-horizontal-4 > li {
+  background: var(--bg-card);
+  border-left: 3px solid var(--navy-light);
+  border-radius: 0;
+  padding: 11px 16px;
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--trans);
+}
+
+.pub-list-horizontal-4 > li:hover { box-shadow: var(--shadow-sm); }
+
+.pub-list-horizontal-4 > li p { margin: 4px 0; }
+
+/* ----------------------------------------------------------------
+   General lists
+---------------------------------------------------------------- */
+.list-3 {
+  list-style: disc;
+  padding-left: 26px;
+  margin: 0 0 16px;
+}
+
+.inner-list-3 {
+  list-style: circle;
+  padding-left: 24px;
+  margin: 6px 0 8px;
+}
+
+.outer-2,
+.container-2 ul,
+.page-2 ul,
+.page-3 ul,
+.page-4 ul {
+  padding-left: 24px;
+}
+
+.inner-dash-2     { list-style: "– "; padding-left: 28px; }
+.inner-asterisk-2 { list-style: "* "; padding-left: 28px; }
+
+li { margin-bottom: 5px; }
+
+/* ----------------------------------------------------------------
+   Two-column layout  (people-pubs.html)
+---------------------------------------------------------------- */
+.people-sidebar {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.people-sidebar-col {
+  flex: 0 0 270px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.people-sidebar-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Person card inside sidebar */
+.person-card-side {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-xs);
+}
+
+.person-card-side h4 {
+  font-family: var(--font-head);
+  font-size: 1.02rem;
+  color: var(--navy);
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--gold);   /* 朱砂 underline */
+}
+
+.person-card-side .person-card-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.person-card-side img {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+
+.person-card-side .person-card-info {
+  font-size: .83rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+.person-card-side .person-card-info a { font-size: .82rem; }
+
+/* ----------------------------------------------------------------
+   Legacy Bootstrap-like column classes
+---------------------------------------------------------------- */
+.col-xs-3,
+.col-xs-4 {
+  float: left;
+  width: 24%;
+  padding-right: 22px;
+  box-sizing: border-box;
+}
+
+.col-xs-7,
+.col-xs-8 {
+  float: left;
+  width: 76%;
+  box-sizing: border-box;
+}
+
+.page-3::after,
+.page-5::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.col-xs-3 h4,
+.col-xs-4 h4 {
+  font-family: var(--font-head);
+  font-size: 1.02rem;
+  color: var(--navy);
+  margin: 16px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--gold);
+}
+
+.col-xs-3 h4:first-child,
+.col-xs-4 h4:first-child { margin-top: 0; }
+
+.col-xs-3 .row img,
+.col-xs-4 .row img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+}
+
+/* ----------------------------------------------------------------
+   Color Utility Classes
+---------------------------------------------------------------- */
+.green-1  { color: var(--teal); }
+.blue-1   { color: var(--navy-mid); }
+.red-1    { color: var(--red); }
+.larger-1 { font-size: 1.05em; font-weight: 600; }
+
+/* ----------------------------------------------------------------
+   Spacers
+---------------------------------------------------------------- */
+.spacer, .spacer-3 { height: 20px; }
+
+/* ----------------------------------------------------------------
+   Footer
+---------------------------------------------------------------- */
+.site-footer {
+  background: #1a1209;
+  color: rgba(240,220,190,.45);
+  text-align: center;
+  font-size: .8rem;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 2px solid var(--gold);
+}
+
+.site-footer a { color: rgba(240,180,160,.75); }
+.site-footer a:hover { color: var(--gold-light); text-decoration: none; }
+
+/* ----------------------------------------------------------------
+   Content card  (pubs-research.html wrapper)
+---------------------------------------------------------------- */
+.content-4 {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ----------------------------------------------------------------
+   Under-construction notice
+---------------------------------------------------------------- */
+.under-construction {
+  display: inline-block;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  color: var(--text-mid);
+  border-radius: var(--radius);
+  padding: 10px 18px;
+  font-size: .9rem;
+  margin: 16px 0;
+}
+
+/* ----------------------------------------------------------------
+   Publication Entries  (people-pubs.html)
+---------------------------------------------------------------- */
+.pubs-section { margin-bottom: 36px; }
+
+.pub-year-section { margin-bottom: 28px; }
+
+/* Year stamp — 印章 seal style */
+.pub-year-label {
+  display: inline-flex;
+  align-items: center;
+  background: var(--navy);
+  color: #f0e8d8;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  font-family: var(--font-head);
+  padding: 3px 16px;
+  border-radius: 0;           /* flat seal */
+  border: 1px solid var(--gold);
+  margin-bottom: 10px;
+}
+
+.pub-entry {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--border);
+  border-radius: 0;
+  padding: 13px 16px;
+  margin-bottom: 9px;
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--trans), border-left-color var(--trans);
+}
+
+.pub-entry:hover {
+  box-shadow: var(--shadow-sm);
+  border-left-color: var(--gold);   /* 朱砂 on hover */
+}
+
+/* 印章 Seal-stamp badges */
+.pub-badge {
+  display: inline-block;
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 1px;
+  margin-bottom: 6px;
+}
+
+.pub-badge-journal  { background: #c41230; color: #fdf6ef; }   /* 朱砂 red */
+.pub-badge-conf     { background: #2a6040; color: #f0ead8; }   /* 墨绿 ink green */
+.pub-badge-thesis   { background: #7a4a1a; color: #fdf6ef; }   /* 赭石 ochre brown */
+.pub-badge-pending  { background: #5a3a8a; color: #f0e8f8; }   /* 青紫 violet */
+.pub-badge-granted  { background: #1a5a3a; color: #f0f8f0; }   /* 翠绿 deep green */
+
+.pub-title {
+  font-size: .96rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0 0 4px;
+  line-height: 1.42;
+  font-family: var(--font-head);
+}
+
+.pub-title a          { color: var(--navy); text-decoration: none; }
+.pub-title a:hover    { color: var(--gold); text-decoration: none; }
+
+.pub-authors {
+  font-size: .85rem;
+  color: var(--text-mid);
+  margin: 0 0 3px;
+}
+
+.pub-venue {
+  font-size: .85rem;
+  color: var(--text-muted);
+  margin: 0 0 6px;
+}
+
+.pub-note {
+  font-size: .78rem;
+  color: var(--teal);
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.pub-links {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.pub-link {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: 2px 10px;
+  border-radius: 1px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--navy-mid);
+  text-decoration: none;
+  transition: background var(--trans), border-color var(--trans), color var(--trans);
+}
+
+.pub-link:hover {
+  background: var(--navy);
+  color: #f0e8d8;
+  border-color: var(--navy);
+  text-decoration: none;
+}
+
+.patents-group-label {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 24px 0 10px;
+  padding: 8px 12px;
+  border-left: 4px solid var(--gold);
+  background: linear-gradient(90deg, rgba(196,18,48,.05) 0%, transparent 55%);
+  border-radius: 0;
+}
+
+/* ----------------------------------------------------------------
+   Bibbase overrides
+---------------------------------------------------------------- */
+.bibbase_amazon { display: none !important; }
+
+#bibbase_body { clear: both; padding-top: .25em; }
+
+.bibbase_paper { margin-bottom: 6px; }
+
+.bibbase_paper_title { font-weight: 600; }
+
+.bibbase_paper_title a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.bibbase_paper_title a:hover { border-bottom: 1px dotted #aaa; }
+
+.bibbase_paper_content { font-size: .88em; }
+
+.bibbase_paper_content a { text-decoration: none; }
+
+span.bibbase_group_count { font-size: smaller; }
+
+.bibbase_group_head i { display: inline-block; width: 20px; }
+
+.bibbase_msg { text-align: center; width: 80%; margin: auto; }
+
+#bibbase li { list-style: none; }
+
+.bibbase.well {
+  margin: 12px;
+  overflow-wrap: break-word;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-xs);
+}
+
+/* ----------------------------------------------------------------
+   Responsive
+---------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .header-0 { padding: 0 14px; }
+  .header-left-0 img { height: 48px; }
+  .header-right-0 h1 { font-size: 1.15rem; }
+  .header-right-0 h2 { font-size: .88rem; }
+  .header-right-0 h3 { font-size: .68rem; }
+
+  .menu-0 ul {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .menu-0 a { padding: 0 11px; font-size: .7rem; }
+
+  .page-1, .page-2, .page-3, .page-4, .page-5 {
+    padding: 20px 16px 40px;
+  }
+
+  .people-container-1  { flex-direction: column; }
+  .problem-solution-1  { flex-direction: column; }
+  .benefits-notes-1    { flex-direction: column; }
+  .container-split-2   { flex-direction: column; }
+  .people-sidebar      { flex-direction: column; }
+
+  .problem-solution-1 .left-1,
+  .problem-solution-1 .right-1,
+  .benefits-notes-1 .left-1,
+  .benefits-notes-1 .right-1,
+  .left-2, .right-2 { flex: none; width: 100%; }
+
+  .col-xs-3, .col-xs-4,
+  .col-xs-7, .col-xs-8 {
+    float: none;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .people-sidebar-col { flex: none; width: 100%; }
+}

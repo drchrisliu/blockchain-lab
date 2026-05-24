@@ -2,77 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SCaaS – Research Synopsis – Innovations</title>
-
-  <!-- shared header/menu styles -->
-  <link rel="stylesheet" href="css/styles-0.css" />
-  <!-- page-specific styles -->
-  <link rel="stylesheet" href="css/styles-3.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Synopsis – Dalhousie Blockchain Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/theme.css" />
 </head>
-
 <body>
 
-  <!-- Fixed Header (same as other pages) -->
+  <!-- Fixed Header -->
   <header class="header-0">
     <div class="header-left-0">
-      <img src="Assets/logo.svg" alt="Dalhousie Blockchain Lab logo" />
+      <img src="Assets/logo.svg" alt="Dalhousie Blockchain Lab Logo" />
     </div>
     <div class="header-right-0">
-      <h1 class="hdrtitle-0">Dalhousie Blockchain Lab</h1>
-      <h2 class="hdrsubtitle-0">Smart Contract as a Service – <span class="red-0">SCaaS</span></h2>
-      <h3 class="hdrinvestigators-0">Investigators: Drs. C. Liu & P. Bodorik, Dalhousie University, and Dr. D. Jutla, Saint Mary’s University</h3>
+      <h1>Dalhousie Blockchain Lab</h1>
+      <h2>Smart Contract as a Service – <span class="red-0">SCaaS</span></h2>
+      <h3>Investigators: Drs. C. Liu &amp; P. Bodorik, Dalhousie University, and Dr. D. Jutla, Saint Mary's University</h3>
     </div>
   </header>
 
-  <!-- Fixed menu (same as other pages) -->
+  <!-- Fixed Navigation -->
   <nav class="menu-0">
     <ul>
-      <li><a href="index.html">Exec-summary</a></li>
-      <li><a href="exec-synopsis.html">Exec-synopsis</a></li>
-      <li><a href="research-synopsis.html" class="active-0">Research-synopsis</a></li>
-      <li><a href="pubs-research.html">Pubs-research</a></li>
-      <li><a href="people-pubs.html">People-pubs</a></li>
+      <li><a href="index.html">Exec-Summary</a></li>
+      <li><a href="exec-synopsis.html">Exec-Synopsis</a></li>
+      <li><a href="research-synopsis.html" class="active-0">Research Synopsis</a></li>
+      <li><a href="pubs-research.html">Pubs &amp; Research</a></li>
+      <li><a href="people-pubs.html">People &amp; Pubs</a></li>
       <li><a href="videos.html">Videos</a></li>
-      <li><a href="try-scaas.html">Try-SCaaS</a></li>
-      <li><a href="new-projects.html">New-projects</a></li>
+      <li><a href="try-scaas.html">Try SCaaS</a></li>
+      <li><a href="new-projects.html">New Projects</a></li>
     </ul>
   </nav>
 
-  <!-- Main page content starts below fixed header+menu -->
+  <!-- Main Content -->
   <main class="page-3">
 
-    <!-- Page title centered -->
-    <h1 class="page-title-3">SCaaS – Research Synopsis – Innovations</h1>
+    <h1 class="page-title-3">SCaaS – Research Synopsis &amp; Innovations</h1>
 
-    <!-- Intro paragraph -->
     <p class="ptext-3">
       As in other approaches to transforming BPMN models to smart contracts, we also start with the Business Analyst (BA)
       preparing a model of the business processes occurring in the trading activity using the graphical Business Process
       Management Notation (BPMN). The BA also describes the business logic using the Decision Modeling Notation (DMN).
-      However, in comparison to other research in this space, we use a unique approach to transformation of the BPMN
-      models to smart contracts that uses multi-modal modeling and provides support for 
-      <strong>multi-step nested transactions</strong>, <strong>portability and interoperability</strong>, 
+      However, in comparison to other research in this space, we use a unique approach to the transformation of BPMN
+      models to smart contracts that employs multi-modal modeling and provides support for
+      <strong>multi-step nested transactions</strong>, <strong>portability and interoperability</strong>,
       <strong>privacy and security</strong>,
       and <strong>support for Smart Contract Lifecycle</strong>.
     </p>
 
     <hr class="divider-3" />
 
-    <!-- Multi-modal Modeling -->
     <h2 class="major-heading-3">Multi-modal Modeling</h2>
 
     <ul class="list-3">
       <li>
-        BPMN model is transformed to a graph model and then into a multi-modal model in which collaborative tasks are
+        A BPMN model is transformed to a graph model and then into a multi-modal model in which collaborative tasks are
         represented using:
         <ul class="inner-list-3">
           <li><strong>Discrete Element (DE)</strong> modeling to represent time</li>
           <li><strong>Hierarchical State Machines (HSMs)</strong> to represent functionality</li>
-          <li><strong>DE-HSM</strong> modeling — the two above referred together as DE-HSM modeling</li>
+          <li><strong>DE-HSM</strong> modeling — the two above referred to together as DE-HSM modeling</li>
         </ul>
       </li>
-
       <li>
         Multi-modal modeling represents the distributed activities of various collaborating actors, such as product
         producers, shippers, suppliers, customs brokers, banks, and creditors, and their synchronization.
@@ -81,7 +74,6 @@
 
     <hr class="divider-3" />
 
-    <!-- Portability and Interoperability -->
     <h2 class="major-heading-3">Portability and Interoperability</h2>
 
     <ul class="list-3">
@@ -91,9 +83,8 @@
         can execute any smart contract generated by our DE-HSM modeling approach. Currently, we have interpreter smart
         contracts on Hyperledger Fabric and Ethereum blockchains.
       </li>
-
       <li>
-        This supports portability, in that a smart contract can be generated for different blockchains. It also supports
+        This supports portability — a smart contract can be generated for different blockchains. It also supports
         interoperability as a method in one smart contract may invoke methods of different smart contracts, even if they
         are deployed on different blockchains.
       </li>
@@ -101,7 +92,6 @@
 
     <hr class="divider-3" />
 
-    <!-- Nested multi-step transactions -->
     <h2 class="major-heading-3">Support for Nested Multi-step Transactions</h2>
 
     <ul class="list-3">
@@ -109,18 +99,15 @@
         Blockchains only support single-step transactions that once invoked complete execution; thus, a blockchain
         transaction does not natively support multi-step activities executed by different actors.
       </li>
-
       <li>
         Our approach enables the BA to define a multi-step transaction as an execution of a set of blockchain smart
         contract methods. The SCaaS transformation tool automatically generates a transaction mechanism to enforce the
-        transactional properties <strong>Atomicity, Consistency, Isolation, and Durability (ACID)</strong> analogous to
+        transactional properties <strong>Atomicity, Consistency, Isolation, and Durability (ACID)</strong> — analogous to
         ACID properties in database systems.
       </li>
-
       <li>
         The multi-step transactions can be nested: a transaction may contain one or more sub-transactions.
       </li>
-
       <li>
         Sub-transactions can be packaged as separate smart contracts deployable on possibly different blockchains, each
         with its own transaction mechanism.
@@ -129,16 +116,14 @@
 
     <hr class="divider-3" />
 
-    <!-- Privacy and Security -->
-    <h2 class="major-heading-3">Privacy and security</h2>
+    <h2 class="major-heading-3">Privacy and Security</h2>
 
     <ul class="list-3">
       <li>
-        Smart contracts are generated by the SCaaS tool in automated fashion, including automated usage of cryptographic
+        Smart contracts are generated by the SCaaS tool in an automated fashion, including automated usage of cryptographic
         methods that are prevalent in blockchain smart contracts. Thus, security is supported by eliminating human coding
         errors and ensuring the correct use of cryptographic methods.
       </li>
-
       <li>
         Privacy is supported by allowing the actors participating in the trade activity to have access only to information
         pertaining to the activity in which they participate, but not to information pertaining to other activities.
@@ -147,7 +132,6 @@
 
     <hr class="divider-3" />
 
-    <!-- Smart Contract Lifecycle -->
     <h2 class="major-heading-3">Support for Smart Contract Lifecycle</h2>
 
     <ul class="list-3">
@@ -157,12 +141,11 @@
         contract by contract replacement using indirection (proxying). Thus, support for amending smart contracts is
         available for fixing bugs or introducing new features.
       </li>
-
       <li>
         In trade of products and services, situations may arise where a smart contract cannot be completed due to an
         external event (for example: a shipment route becomes unavailable). In such cases, a contract needs to be repaired
         to represent new arrangements. We provide support for smart contract repair that retains results of partially
-        executed smart contracts and enables the BA to use pattern augmentation at the BPMN level to derive continuation
+        executed smart contracts and enables the BA to use pattern augmentation at the BPMN level to derive a continuation
         of the partially executed smart contract.
       </li>
     </ul>
@@ -170,11 +153,14 @@
     <div class="spacer-3"></div>
 
     <p class="ptext-3">
-      For further details on publications’ contributions, please see <a href="pubs-people.html">Pubs&People</a>.
+      For further details on publications and their contributions, please see the <a href="pubs-research.html">Pubs &amp; Research</a> page.
     </p>
 
   </main>
 
+  <footer class="site-footer">
+    &copy; 2025 Dalhousie Blockchain Lab &mdash; Dalhousie University &amp; Saint Mary's University
+  </footer>
+
 </body>
 </html>
-

@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dalhousie Blockchain Lab - Publications & Research</title>
-  <link rel="stylesheet" href="css/styles-0.css" />
-  <link rel="stylesheet" href="css/styles-4.css" />
+  <title>Publications &amp; Research – Dalhousie Blockchain Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/theme.css" />
 </head>
 <body>
 
@@ -17,199 +18,198 @@
     <div class="header-right-0">
       <h1>Dalhousie Blockchain Lab</h1>
       <h2>Smart Contract as a Service – <span class="red-0">SCaaS</span></h2>
-      <h3>Investigators: Drs. C. Liu & P. Bodorik, Dalhousie University, and Dr. D. Jutla, Saint Mary’s University</h3>
+      <h3>Investigators: Drs. C. Liu &amp; P. Bodorik, Dalhousie University, and Dr. D. Jutla, Saint Mary's University</h3>
     </div>
   </header>
 
-  <!-- Fixed Menu -->
+  <!-- Fixed Navigation -->
   <nav class="menu-0">
     <ul>
-      <li><a href="index.html">Exec-summary</a></li>
-      <li><a href="exec-synopsis.html">Exec-synopsis</a></li>
-      <li><a href="research-synopsis.html">Research-synopsis</a></li>
-      <li><a href="pubs-research.html" class="active-0">Pubs-research</a></li>
-      <li><a href="people-pubs.html">People-pubs</a></li>
+      <li><a href="index.html">Exec-Summary</a></li>
+      <li><a href="exec-synopsis.html">Exec-Synopsis</a></li>
+      <li><a href="research-synopsis.html">Research Synopsis</a></li>
+      <li><a href="pubs-research.html" class="active-0">Pubs &amp; Research</a></li>
+      <li><a href="people-pubs.html">People &amp; Pubs</a></li>
       <li><a href="videos.html">Videos</a></li>
-      <li><a href="try-scaas.html">Try-SCaaS</a></li>
-      <li><a href="new-projects.html">New-projects</a></li>
+      <li><a href="try-scaas.html">Try SCaaS</a></li>
+      <li><a href="new-projects.html">New Projects</a></li>
     </ul>
   </nav>
 
   <!-- Page Content -->
   <main class="page-4">
-    <section class="content-4">
+    <div class="content-4">
 
       <h1 class="page-title-4">SCaaS – Research in Publications</h1>
 
       <p class="intro-4">
-        Publications are organized around research topics/themes. Below each research topic, relevant publications are listed, and then main contributions are described. 
-        For detailed references and downloads, please see <strong>People-pubs</strong> page.
+        Publications are organized around research topics and themes. Below each research topic, relevant publications
+        are listed and main contributions are described.
+        For detailed references and downloads, please see the <a href="people-pubs.html">People &amp; Pubs</a> page.
       </p>
 
       <!-- SECTION 1 -->
       <hr class="divider-4" />
-      <h2 class="major-heading-4">Transforming FSMs to smart contracts with sidechain processing</h2>
+      <h2 class="major-heading-4">Transforming FSMs to Smart Contracts with Sidechain Processing</h2>
 
       <ul class="pub-list-4">
         <li>
-          <p><strong>Using FSMs to Find Patterns for Off-Chain Computing: Finding Patterns for Off-Chain Computing with FSMs.</strong> 
-            Bodorik, P.; G. Liu, C.; and Julta, D. In 2021 The 3rd ACM International Conference on Blockchain 
-            Technology (ICBCT '21), pages 28–34, New York, NY, USA, 2021.</p>
+          <p><strong>Using FSMs to Find Patterns for Off-Chain Computing: Finding Patterns for Off-Chain Computing with FSMs.</strong>
+            Bodorik, P.; G. Liu, C.; and Jutla, D. In <em>2021 The 3rd ACM International Conference on Blockchain
+            Technology (ICBCT '21)</em>, pages 28–34, New York, NY, USA, 2021.</p>
         </li>
-
         <li>
-          <p><strong>A Tool for Moving Blockchain Computations Off-Chain.</strong> Liu, C.; Bodorik, P.; and Jutla, D. 
-            In Proceedings of the 3rd ACM International Symposium on Blockchain and Secure Critical Infrastructure (BSCI '21),
-             pages 103–109, New York, NY, USA, 2021.</p>
+          <p><strong>A Tool for Moving Blockchain Computations Off-Chain.</strong> Liu, C.; Bodorik, P.; and Jutla, D.
+            In <em>Proceedings of the 3rd ACM International Symposium on Blockchain and Secure Critical Infrastructure (BSCI '21)</em>,
+            pages 103–109, New York, NY, USA, 2021.</p>
         </li>
       </ul>
 
-      <p>The first paper presents a methodology for transforming computation represented using an FSM into a smart contract. 
-        Furhtermore, a method is presented for analyzing the smart contract to find patterns in the smart contract 
-        that are suitable for computation on a sidechain. The paper describes how to package the pattern as a separate 
-        smart contract that is deployed on a cheaper sidechain. The methodology provides for the necessary interaction 
-        protocol between the main and the sidechain.</p>
-      <p>The second paper elaborates on the tool to provide automated transformation of the FSM model into the 
-         methods a smart contract. For Ehereum blockchain, a method is provided to estimate the cost of (i) executing 
-         the patterm on the mainchain and then (ii) on a sidechain, while also including the overhead cost due to 
-         interaction between the main and side chains. If the cost, including the overhead cost, of executing the 
-         pattern on the sidechain is cheaper, then the pattern is deployed on the sidechain. 
-      </p>
-      <p>However, FSMs are limited in their expressiveness to support trade and goods and services applications, 
-          and hence other <strong>Model Driven Engineering (MDE)</strong> need to be explored for applicability. 
-          We use <strong>Business Process Model Notation (BPMN)</strong> modeling to express the blockchain application requirements 
-          and then transform the BPMN model to smart contracts. Unlike other approaches that transform a BPMN model 
-          directly into smart contract methods, we use interpretive approach based on <strong><em>multi-modal modeling</em></strong>, 
-          in which time is represented using <strong><em>Discrete Event (DE)</em></strong> modeling while functionality 
-         is represented using <strong><em>Hierarchical State Machines (HSMs)</em></strong>, i.e., using 
-         <strong><em>DE-HSM modeling</em></strong>, which is described next.
+      <p>The first paper presents a methodology for transforming computation represented using an FSM into a smart contract.
+        Furthermore, a method is presented for analyzing the smart contract to find patterns suitable for computation on
+        a sidechain. The paper describes how to package the pattern as a separate smart contract deployed on a cheaper sidechain,
+        and provides the necessary interaction protocol between the main and the sidechain.</p>
+
+      <p>The second paper elaborates on the tool to provide automated transformation of the FSM model into smart contract methods.
+        For the Ethereum blockchain, a method is provided to estimate the cost of (i) executing the pattern on the mainchain
+        and (ii) on a sidechain, including the overhead cost due to interaction between chains. If the sidechain cost
+        (including overhead) is cheaper, the pattern is deployed on the sidechain.</p>
+
+      <p>However, FSMs are limited in their expressiveness to support trade and goods/services applications,
+        and hence other <strong>Model Driven Engineering (MDE)</strong> approaches need to be explored.
+        We use <strong>Business Process Model Notation (BPMN)</strong> modeling to express the blockchain application requirements
+        and then transform the BPMN model to smart contracts. Unlike other approaches that transform a BPMN model
+        directly into smart contract methods, we use an interpretive approach based on <strong><em>multi-modal modeling</em></strong>,
+        in which time is represented using <strong><em>Discrete Event (DE)</em></strong> modeling while functionality
+        is represented using <strong><em>Hierarchical State Machines (HSMs)</em></strong> —
+        i.e., <strong><em>DE-HSM modeling</em></strong>, described next.
       </p>
 
       <!-- SECTION 2 -->
       <hr class="divider-4" />
-      <h2 class="major-heading-4">Using Multi-modal modeling to transform a BPMN model to smart contracts</h2>
+      <h2 class="major-heading-4">Using Multi-modal Modeling to Transform a BPMN Model to Smart Contracts</h2>
 
       <ul class="pub-list-horizontal-4">
-        <li><strong>Supporting Long-term Transactions in Smart Contracts.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In 2022 ACM Fourth International Conference on Blockchain Computing and Applications (BCCA), pages 11–19, 2022.</li>
-        <li><strong>Long-Term Blockchain Transactions Spanning Multiplicity of Smart Contract Methods.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In Springer BlockSys: Blockchain and Trustworthy Systems, pages 141–155, 2023.</li>
-        <li><strong>Transforming Automatically BPMN Models to Smart Contracts with Nested Collaborative Transactions (TABS+).</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In ACM Journal Distributed Ledger Technologies: Research and Practice, Volume 3, Issue 3, Article No.: 21, Pages 1–37, 2024.</li>
+        <li><strong>Supporting Long-term Transactions in Smart Contracts.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In <em>2022 ACM Fourth International Conference on Blockchain Computing and Applications (BCCA)</em>, pages 11–19, 2022.</li>
+        <li><strong>Long-Term Blockchain Transactions Spanning Multiplicity of Smart Contract Methods.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In <em>Springer BlockSys: Blockchain and Trustworthy Systems</em>, pages 141–155, 2023.</li>
+        <li><strong>Transforming Automatically BPMN Models to Smart Contracts with Nested Collaborative Transactions (TABS+).</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In <em>ACM Journal Distributed Ledger Technologies: Research and Practice</em>, Volume 3, Issue 3, Article No.: 21, Pages 1–37, 2024.</li>
       </ul>
 
       <p>A blockchain application, expressed using a <strong><em>Business Process Model Notation (BPMN)</em></strong>
-         model, is transformed into a <em><strong>multi-modal model</em></strong>, more specifically 
-          <em><strong>DE-HSM model</em></strong> in which 
-         time is represented using <em><strong>Discrete Event (DE)</em></strong> modeling while functionality 
-         is represented using <em><strong>Hierarchical State Machines (HSMs)</em></strong>.
+         model, is transformed into a <em><strong>multi-modal model</strong></em> — more specifically
+         a <em><strong>DE-HSM model</strong></em> — in which time is represented using <em><strong>Discrete Event (DE)</strong></em>
+         modeling while functionality is represented using <em><strong>Hierarchical State Machines (HSMs)</strong></em>.
       </p>
 
-      <p>The DE-HSM model is transformed into the methods of a smart contract(s). 
-        The smart contract contains a data structure representing the DE-HSM model 
-        wherein such a data structure is <strong><em>independent of the blockchain infrastructure</em></strong>. 
-        It also includes one main method that, given input from an actor, checks the current state of computation 
-        and determines the state transition while also producing outputs associated with the transition. 
-        The transition output and the new state represent the synchronization activities. 
-        However, if the transition indicates that a particular BPMN <em>task element</em> is to be executed, 
-        then a method associated with that task element is executed.
+      <p>The DE-HSM model is transformed into the methods of smart contract(s).
+        The smart contract contains a data structure representing the DE-HSM model
+        that is <strong><em>independent of the blockchain infrastructure</em></strong>.
+        It also includes one main method that, given input from an actor, checks the current state of computation
+        and determines the state transition while also producing outputs associated with the transition.
+        The transition output and the new state represent the synchronization activities.
+        However, if the transition indicates that a particular BPMN <em>task element</em> is to be executed,
+        a method associated with that task element is executed.
       </p>
-      <p>We present a method and a tool to transform a BPMN model to DE-HSM model, and then to smart contracts, automatically. 
-        The business logic for each actor is represented as a script contained within a BPMN-task element 
-        that is created either by a developer, or by a BA using a graphical DMN modeling tool. 
-        The script for the BPMN element method execution has well-defined input and oupput parameters and its execution 
-        and its execution has only laccess to its local vand blockchain state variables (in addition to the parameters). Con
-        Consequently, it is well-defined and thus:
+      <p>We present a method and a tool to transform a BPMN model to a DE-HSM model, and then to smart contracts, automatically.
+        The business logic for each actor is represented as a script contained within a BPMN-task element
+        created either by a developer or by a BA using a graphical DMN modeling tool.
+        Consequently:
       </p>
       <ul class="pub-list-horizontal-4">
-        <li>Developer’s job is greatly simplified as all synchronization activities and using cryptographic methods 
-        for security are automatically provided by the transformation tool.</li>
-        <li>Moreover, if a BA can express business logic of BPMN elements using Decision Model Notation (DMN), 
+        <li>Developer's job is greatly simplified as all synchronization activities and cryptographic methods
+          for security are automatically provided by the transformation tool.</li>
+        <li>Moreover, if a BA can express the business logic of BPMN elements using Decision Model Notation (DMN),
           then software developer services are not required.</li>
       </ul>
 
       <!-- SECTION 3 -->
       <hr class="divider-4" />
-      <h2 class="major-heading-4">Supporting collaborative multi-step transactions</h2>
+      <h2 class="major-heading-4">Supporting Collaborative Multi-step Transactions</h2>
 
       <ul class="pub-list-horizontal-4">
-        <li><strong>Supporting Long-term Transactions in Smart Contracts.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In 2022 ACM Fourth International Conference on Blockchain Computing and Applications (BCCA), pages 11–19, 2022.</li>
-        <li><strong>Long-Term Blockchain Transactions Spanning Multiplicity of Smart Contract Methods.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In Springer BlockSys: Blockchain and Trustworthy Systems, pages 141–155, 2023.</li>
-        <li><strong>Transforming Automatically BPMN Models to Smart Contracts with Nested Collaborative Transactions (TABS+).</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In ACM Journal Distributed Ledger Technologies: Research and Practice, Volume 3, Issue 3, Article No.: 21, Pages 1–37, 2024.</li>
+        <li><strong>Supporting Long-term Transactions in Smart Contracts.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In <em>2022 ACM Fourth International Conference on Blockchain Computing and Applications (BCCA)</em>, pages 11–19, 2022.</li>
+        <li><strong>Long-Term Blockchain Transactions Spanning Multiplicity of Smart Contract Methods.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In <em>Springer BlockSys: Blockchain and Trustworthy Systems</em>, pages 141–155, 2023.</li>
+        <li><strong>Transforming Automatically BPMN Models to Smart Contracts with Nested Collaborative Transactions (TABS+).</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In <em>ACM Journal Distributed Ledger Technologies: Research and Practice</em>, Volume 3, Issue 3, Article No.: 21, Pages 1–37, 2024.</li>
       </ul>
 
-      <p>A blockchain transaction is a result of updates performed by an execution of a smart contract method. 
+      <p>A blockchain transaction is a result of updates performed by an execution of a smart contract method.
         However, once a smart contract method is invoked, it runs to completion, and hence it is a single-step transaction
-         that is insufficient to support the long-term collaborative activities executed by several actors that are multi-step.</p>
-      <Atomicity,>Our approach enables a BA to a define a multi-step (long-term) transaction as an execution of several methods, 
-        wherein the transformation tool automatically provides a transaction mechanism to enforce the <strong><em>ACID transactional properties</em></strong> 
-        of <em>Atomicity, Consistency, Isolation, and Durability</em> that are defined similarly as in DB systems.</p>
-      <p>Furthermore, we also support nesting of multi-step (long-term) transactions with sub-transaction 
+        that is insufficient to support long-term collaborative activities executed by several actors.</p>
+      <p>Our approach enables a BA to define a multi-step (long-term) transaction as an execution of several methods,
+        wherein the transformation tool automatically provides a transaction mechanism to enforce the
+        <strong><em>ACID transactional properties</em></strong>
+        of <em>Atomicity, Consistency, Isolation, and Durability</em> — defined analogously to DB systems.</p>
+      <p>Furthermore, we also support nesting of multi-step (long-term) transactions with sub-transaction
         semantics defined as for DB systems.</p>
-      <p>Sub-transactions can be packaged as <em><strong>separate smart contracts deployable on different blockchains</strong></em>, 
-        each one with its transaction mechanism. This is exploited in providing privacy, in that information used for 
-        processing of a sub-transaction is only accessible to actors participating in that activity. </p>
+      <p>Sub-transactions can be packaged as <em><strong>separate smart contracts deployable on different blockchains</strong></em>,
+        each one with its own transaction mechanism. This is exploited in providing privacy, in that information used for
+        processing of a sub-transaction is only accessible to actors participating in that activity.</p>
 
       <!-- SECTION 4 -->
       <hr class="divider-4" />
-      <h2 class="major-heading-4">Recent Research – SCaaS: Usability, Software Life Cycle Support, and Compliance</h2>
+      <h2 class="major-heading-4">Recent Research – SCaaS: Usability, Software Lifecycle Support, and Compliance</h2>
 
-      <p>Our recent research has been addressing usability issues that hamper adoption. We show that (i) SCaaS can be 
-        used not only by a large company with ITS support, but also by an SME; 
-        (ii) SCaaS approach supports the Software Life Cycle, namely that the smart contracts can be upgradable 
-        and repairable, and (iii) SCaaS can be used to support (some of the) compliance requirements.</p>
+      <p>Our recent research has been addressing usability issues that hamper adoption. We show that (i) SCaaS can be
+        used not only by a large company with IT support, but also by an SME;
+        (ii) the SCaaS approach supports the Software Lifecycle — smart contracts can be upgraded and repaired;
+        and (iii) SCaaS can be used to support compliance requirements.</p>
 
-      <h3 class="minor-heading-4">SCaaS for large companies and SMEs</h3>
-      
-      <ul class="pub-list-horizontal-4">
+      <h3 class="minor-heading-4">SCaaS for Large Companies and SMEs</h3>
+
+      <ul class="pub-list-4">
         <li>
-          <p><strong>Smart Contracts for SMEs and Large Companies.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In 2024 IEEE Virtual Conference on Communications (IEEE VCC), 2024.</p>
-          <p>We show that the SCaaS is simple enough that it can be used not only by large software companies with 
+          <p><strong>Smart Contracts for SMEs and Large Companies.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D.
+            In <em>2024 IEEE Virtual Conference on Communications (IEEE VCC)</em>, 2024.</p>
+          <p>We show that SCaaS is simple enough to be used not only by large software companies with
             sophisticated IT support, but also by SMEs.</p>
-
         </li>
         <li>
-          <p><strong>BPMN to Smart Contract by Business Analyst.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In 5th Intelligent Cybersecurity Conference (ICSC 2025), IEEE Library (8 pages).</p>
-          <p>We show how a Business Analyst (BA) in an SME, with a familiarity of BPMN modeling and basic understanding of file management and creating text of JSON files, 
-            can use the SCaaS tool to generate and deploy the smart, and interact with the smart contract execution.</p>
+          <p><strong>BPMN to Smart Contract by Business Analyst.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D.
+            In <em>5th Intelligent Cybersecurity Conference (ICSC 2025)</em>, IEEE Library (8 pages).</p>
+          <p>We show how a Business Analyst in an SME, with familiarity of BPMN modeling and basic understanding
+            of file management and JSON files, can use the SCaaS tool to generate and deploy a smart contract
+            and interact with it.</p>
         </li>
       </ul>
 
-      <h3 class="minor-heading-4">SCaaS - support for the Software Life Cycle</h3>
-      <p>A Smart contract is software, and it has been shown that software needs to be upgradable to stay relevant. 
-        We also address the issue of repairing a partially executed smart contracts that cannot complete its execution 
+      <h3 class="minor-heading-4">SCaaS – Support for the Software Lifecycle</h3>
+      <p>A smart contract is software, and it has been shown that software needs to be upgradable to stay relevant.
+        We also address the issue of repairing partially executed smart contracts that cannot complete execution
         due to conditions in the external environment.</p>
 
       <ul class="pub-list-4">
         <li>
-          <p><strong>Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair.</strong> Liu, C. G.; Bodorik, P.; and Jutla, D. In Elsevier Journal of Blockchain: Research and Applications, 2025.</p>
-          <p>We present a methodology for upgrades of smart condtracts and for their repair when they fail due to unanticipated events. 
-            For instance, a smart contract that includes rail transport, may fail to complete due to a 
-            rail bridge being washed out by flood. 
-            The smart contract needs to be amended/repaired, to represent transport by road instead of by rail. 
-            The repair process begins by identifying the inner most transaction and its corresponding BPMN model 
-            fragment that caused the issue. The modeler amends the BPMN pattern, building on the successful 
-            completion of previous activities. If the fix requires changes outside the inner transaction, 
-            the BPMN model of the parent transaction is used instead. The corrected BPMN model is then transformed into a new 
-            smart contract to ensure consistent transitions while including the previously successfully completed 
-            activities. We describe TABS+R, a new tool for repairing smart contracts, which was developed by 
-            extending our previous tool, TABS+, a proof of concept for transforming BPMN models into smart contracts 
-            with nested transactions.</p>
+          <p><strong>Automated Mechanism to Support Trade Transactions in Smart Contracts with Upgrade and Repair.</strong>
+            Liu, C. G.; Bodorik, P.; and Jutla, D. In <em>Elsevier Journal of Blockchain: Research and Applications</em>, 2025.</p>
+          <p>We present a methodology for upgrades of smart contracts and for their repair when they fail due to unanticipated events.
+            For instance, a smart contract that includes rail transport may fail to complete due to a rail bridge being washed out by flood.
+            The smart contract needs to be amended to represent road transport instead.
+            The repair process identifies the innermost transaction and its corresponding BPMN model fragment.
+            The modeler amends the BPMN pattern, building on the successful completion of previous activities.
+            The corrected BPMN model is transformed into a new smart contract ensuring consistent transitions
+            while including the previously successfully completed activities.
+            We describe TABS+R, a new tool for repairing smart contracts, developed by extending our previous TABS+ tool.</p>
         </li>
       </ul>
 
       <h3 class="minor-heading-4">Support for Compliance and Reporting Requirements</h3>
-      <p>Smart contracts deal with trade activities that need to comply with various regulations and reporting requirements. 
-        Trade activities may be subject to (i) Regulatory compliance, such as GDPR (EU), SOX (U.S.), and HIPPA (U.S.); 
-        (ii) Internal / Corporate Policy Compliance, such as internal policies on travel expenses or signing authority 
-        over expenses; (iii) Standards Compliance, such as PCI DSS (Payment Data); (iv) Contractual Compliance; 
-        (v) Environmental Compliance; (vi) Health and Safety Compliance; (vii) Data and Cybersecurity Compliance; and
-         (viii) Financial Compliance. As the compliance requirements are subject to change, 
-         compliance of smart contracts to the various regulatory requirements causes difficulties with smart contracts 
-         due to smart contracts being deployed on blockchains that are immutable. We are investigating how upgradability 
-         and repair of smart contracts, provided by our SCaaS approach, can be exploited to support (some of the) 
-         regulatory requirements. We are currently preparing a publication describing our progress on this topic.</p>
+      <p>Smart contracts deal with trade activities that need to comply with various regulations and reporting requirements.
+        Trade activities may be subject to (i) Regulatory compliance (GDPR, SOX, HIPAA);
+        (ii) Internal/Corporate Policy Compliance; (iii) Standards Compliance (PCI DSS);
+        (iv) Contractual Compliance; (v) Environmental Compliance; (vi) Health and Safety Compliance;
+        (vii) Data and Cybersecurity Compliance; and (viii) Financial Compliance.
+        We are investigating how upgradability and repair of smart contracts in our SCaaS approach
+        can be exploited to support regulatory requirements.
+        A publication describing our progress on this topic is currently in preparation.</p>
 
       <hr class="divider-4" />
-    </section>
+
+    </div>
   </main>
+
+  <footer class="site-footer">
+    &copy; 2025 Dalhousie Blockchain Lab &mdash; Dalhousie University &amp; Saint Mary's University
+  </footer>
 
 </body>
 </html>
